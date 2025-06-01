@@ -21,6 +21,7 @@
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.mypyArgs": [
+    "--check-untyped-defs",
     "--ignore-missing-imports",
     "--strict"
   ],
