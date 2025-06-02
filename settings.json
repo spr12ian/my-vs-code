@@ -1,1 +1,49 @@
-{"[python]":{"editor.formatOnSave":true,"editor.insertSpaces":true,"editor.tabSize":4},"editor.insertSpaces":true,"editor.tabSize":2,"files.encoding":"utf8","files.eol":"\n","files.exclude":{"**/*.pyc":true,"**/__pycache__/":true},"files.insertFinalNewline":true,"makefile.configureOnOpen":false,"python.formatting.blackArgs":["--line-length","88"],"python.formatting.provider":"black","python.linting.enabled":true,"python.linting.mypyArgs":["--check-untyped-defs","--ignore-missing-imports","--strict"],"python.linting.mypyEnabled":true}
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.formatOnSave": true
+  },
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/*.pyc": true,
+    "**/__pycache__/": true
+  },
+  "files.insertFinalNewline": true,
+  "geminicodeassist.project": "",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.path": "/usr/bin/git",
+  "makefile.configureOnOpen": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "88"
+  ],
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": false,
+  "python.linting.lintOnSave": true,
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--strict"
+  ],
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": false,
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "shellcheck.enable": true
+}
