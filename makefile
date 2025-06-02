@@ -1,9 +1,6 @@
 # bash is required for some of the syntax used in the Makefile
 SHELL := /bin/bash
 
-# Default for Linux
-DEPLOYMENT_SETTINGS := $(HOME)/.config/Code/User/settings.json
-
 # Check jq installed
 ifeq (, $(shell which jq))
 $(error jq is not installed. Please install jq to use this Makefile.)
@@ -27,43 +24,56 @@ all:
 	jq -S . settings.json > settings.tmp && mv settings.tmp settings.json
 
 compare:
-	@IS_WSL=$$(uname -r | grep -i microsoft || true); \
-	if [ -n "$$IS_WSL" ]; then \
-	  WINDOWS_USER=$$(cmd.exe /c "echo %USERNAME%" | tr -d '\r'); \
-	  DEPLOYMENT_SETTINGS="/mnt/c/Users/$$WINDOWS_USER/AppData/Roaming/Code/User/settings.json"; \
-	else \
-	  DEPLOYMENT_SETTINGS="$(DEPLOYMENT_SETTINGS)"; \
-	fi; \
 	echo "Comparing settings files..." && \
-	diff <(jq -S . settings.json) <(jq -S . $$DEPLOYMENT_SETTINGS) && \
+	diff <(jq -S . settings.json) <(jq -S . $(VSCODE_SETTINGS_FILE)) && \
 	echo "No differences found between settings files." || \
 	echo "Differences found — consider running 'make all' to sync."
 
 debug:
-	@IS_WSL=$$(uname -r | grep -i microsoft || true); \
-	if [ -n "$$IS_WSL" ]; then \
-	  WINDOWS_USER=$$(cmd.exe /c "echo %USERNAME%" | tr -d '\r'); \
-	  DEPLOYMENT_SETTINGS="/mnt/c/Users/$$WINDOWS_USER/AppData/Roaming/Code/User/settings.json"; \
-	else \
-	  DEPLOYMENT_SETTINGS="$(DEPLOYMENT_SETTINGS)"; \
-	fi; \
-	echo "IS_WSL: $$IS_WSL"; \
-	echo "WINDOWS_USER: $$WINDOWS_USER"; \
-	echo "DEPLOYMENT_SETTINGS: $$DEPLOYMENT_SETTINGS"
+	@	echo "VSCODE_SETTINGS_FILE: $(VSCODE_SETTINGS_FILE)"
 
 deploy:
-	@IS_WSL=$$(uname -r | grep -i microsoft || true); \
-	if [ -n "$$IS_WSL" ]; then \
-	  WINDOWS_USER=$$(cmd.exe /c "echo %USERNAME%" | tr -d '\r'); \
-	  DEPLOYMENT_SETTINGS="/mnt/c/Users/$$WINDOWS_USER/AppData/Roaming/Code/User/settings.json"; \
-	else \
-	  DEPLOYMENT_SETTINGS="$(DEPLOYMENT_SETTINGS)"; \
-	fi; \
 	@echo "Deploying settings file to VS Code..." && \
-	@cp settings.json $$DEPLOYMENT_SETTINGS && \
+	@cp settings.json $(VSCODE_SETTINGS_FILE) && \
 	@echo "Deployment complete."
 
 find-all:
 	@echo "Finding all VS Code settings.json files..."
 	@find ~ -type f -name settings.json | grep -i ".vscode\|Code/User" || true
 	@echo "NOTE: settings.json in ~/.vscode-server is auto-generated. Do not edit manually."
+
+export_extensions:
+	@echo "Exporting VS Code extensions..."
+	@code --list-extensions | sort > extensions.txt
+	@echo "Extensions exported to extensions.txt."
+
+list-extensions:
+	@echo "Listing all VS Code extensions..."
+	@code --list-extensions | sort || true
+	@echo "NOTE: Use 'code --install-extension <extension-id>' to install any missing extensions."
+	@echo "To export installed extensions, use 'code --list-extensions > extensions.txt'."
+list-extensions-installed:
+	@echo "Listing installed VS Code extensions..."
+	@code --list-extensions --show-versions | sort || true
+	@echo "NOTE: Use 'code --install-extension <extension-id>' to install any missing extensions."
+	@echo "To export installed extensions, use 'code --list-extensions --show-versions > extensions.txt'."
+list-extensions-remote:
+	@echo "Listing remote VS Code extensions..."
+	@code --list-extensions --show-versions --remote || true
+	@echo "NOTE: Use 'code --install-extension <extension-id>' to install any missing extensions."
+	@echo "To export installed extensions, use 'code --list-extensions --show-versions --remote > extensions.txt'."
+list-extensions-remote-installed:
+	@echo "Listing installed remote VS Code extensions..."
+	@code --list-extensions --show-versions --remote | sort || true
+	@echo "NOTE: Use 'code --install-extension <extension-id>' to install any missing extensions."
+	@echo "To export installed extensions, use 'code --list-extensions --show-versions --remote > extensions.txt'."
+list-extensions-remote-installed-json:
+	@echo "Listing installed remote VS Code extensions in JSON format..."
+	@code --list-extensions --show-versions --remote | jq -R . | jq -s . || true
+	@echo "NOTE: Use 'code --install-extension <extension-id>' to install any missing extensions."
+	@echo "To export installed extensions, use 'code --list-extensions --show-versions --remote | jq -R . | jq -s . > extensions.json'."
+
+load-extensions:
+	@echo "Loading VS Code extensions from extensions.json..."
+	xargs -n 1 code --install-extension < extensions.txt
+	@echo "Extensions loaded successfully."
