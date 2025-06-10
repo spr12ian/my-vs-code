@@ -1,0 +1,22 @@
+{
+    "name": "python",
+    "settings": {
+        "python.envFile": "${workspaceFolder}/.env",
+        "python.formatting.provider": "black",
+        "python.linting.enabled": false,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.rulers": [88],
+        "files.exclude": {
+            "**/__pycache__": true
+        }
+    },
+    "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "njpwerner.autodocstring"
+    ]
+}

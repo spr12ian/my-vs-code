@@ -1,0 +1,42 @@
+{
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format",
+    "editor.formatOnSave": true
+  },
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": false,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/*.pyc": true,
+    "**/__pycache__/": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "geminicodeassist.project": "",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "git.path": "/usr/bin/git",
+  "makefile.configureOnOpen": false,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "black-formatter.args": [
+    "--line-length",
+    "88"
+  ],
+  "python.formatting.provider": "black",
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "shellcheck.enable": true,
+  "workbench.colorTheme": "Default Dark+"
+}
