@@ -5,7 +5,7 @@
     "editor.tabSize": 4
   },
   "[shellscript]": {
-    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.formatOnSave": true
   },
   "editor.insertSpaces": true,
