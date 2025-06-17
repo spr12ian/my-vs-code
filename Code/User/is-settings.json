@@ -1,11 +1,17 @@
 {
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4
+  },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
   },
   "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
@@ -31,12 +37,19 @@
     "--line-length",
     "88"
   ],
-  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.lintOnSave": true,
+  "python.linting.mypyArgs": [
+    "--ignore-missing-imports",
+    "--strict"
+  ],
+  "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": false,
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
   "shellcheck.enable": true,
-  "workbench.colorTheme": "Default Dark+"
+  "workbench.colorTheme": "Default Dark+",
+  "security.workspace.trust.untrustedFiles": "open"
 }
