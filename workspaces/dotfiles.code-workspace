@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "../../dotfiles"
+    }
+  ],
+  "settings": {
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true
+    },
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true
+  }
+}

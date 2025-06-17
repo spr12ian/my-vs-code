@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": "../../bin"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true,
+
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    }
+  }
+}

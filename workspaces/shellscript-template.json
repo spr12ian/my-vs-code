@@ -1,0 +1,13 @@
+{
+  "settings": {
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "foxundermoon.shell-format"
+    ]
+  }
+}
