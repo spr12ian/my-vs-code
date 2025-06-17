@@ -1,26 +1,18 @@
 {
   "folders": [
     {
-      "path": "../../dotfiles"
+      "path": "../../my-vs-code"
     }
   ],
   "settings": {
     "editor.tabSize": 2,
     "editor.formatOnSave": true,
-
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true,
-
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
     }
-  },
-  "extensions": {
-    "recommendations": [
-      "foxundermoon.shell-format",
-      "mads-hartmann.bash-ide-vscode",
-      "yzhang.markdown-all-in-one"
-    ]
   }
 }

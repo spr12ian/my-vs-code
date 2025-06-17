@@ -16,5 +16,12 @@
       "editor.formatOnSave": true,
       "editor.tabSize": 2
     }
+  },
+  "extensions": {
+    "recommendations": [
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode",
+      "yzhang.markdown-all-in-one"
+    ]
   }
 }

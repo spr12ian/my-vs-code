@@ -7,8 +7,13 @@
   "settings": {
     "editor.tabSize": 2,
     "editor.formatOnSave": true,
-    
+
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true
+  },
+  "extensions": {
+    "recommendations": [
+      "yzhang.markdown-all-in-one"
+    ]
   }
 }

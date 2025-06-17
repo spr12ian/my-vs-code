@@ -1,0 +1,9 @@
+{
+  "settings": {
+  },
+  "extensions": {
+    "recommendations": [
+      "budparr.language-hugo-vscode"
+    ]
+  }
+}

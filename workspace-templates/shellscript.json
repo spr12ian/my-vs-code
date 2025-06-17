@@ -2,12 +2,14 @@
   "settings": {
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
     }
   },
   "extensions": {
     "recommendations": [
-      "foxundermoon.shell-format"
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode"
     ]
   }
 }

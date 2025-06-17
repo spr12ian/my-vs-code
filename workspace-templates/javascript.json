@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "oouo-diogo-perdigao.docthis"
+    ]
+  }
+}
