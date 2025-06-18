@@ -26,7 +26,6 @@
       "charliermarsh.ruff",
       "ms-python.python",
       "ms-python.vscode-pylance",
-      "ms-toolsai.jupyter",
       "ms-vscode.debugpy"
     ]
   }
