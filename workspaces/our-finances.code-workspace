@@ -24,9 +24,11 @@
   "extensions": {
     "recommendations": [
       "charliermarsh.ruff",
+      "ms-python.black-formatter",
       "ms-python.python",
       "ms-python.vscode-pylance",
-      "ms-vscode.debugpy"
+      "ms-vscode.debugpy",
+      "tamasfe.even-better-toml"
     ]
   }
 }

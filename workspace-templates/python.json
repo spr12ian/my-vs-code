@@ -1,7 +1,11 @@
 {
   "settings": {
     "[python]": {
-      "editor.defaultFormatter": "ms-python.black-formatter"
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.tabSize": 4,
+      "files.exclude": {
+          "**/__pycache__": true
+      }
     },
     "python.analysis.autoSearchPaths": true,
     "python.analysis.useLibraryCodeForTypes": true,
