@@ -1,6 +1,6 @@
 {
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
@@ -33,7 +33,7 @@
   "makefile.configureOnOpen": false,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.typeCheckingMode": "strict",
-  "black-formatter.args": [
+  "ruff-formatter.args": [
     "--line-length",
     "88"
   ],

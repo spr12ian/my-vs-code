@@ -8,6 +8,7 @@
   },
   "extensions": {
     "recommendations": [
+      "dbaeumer.vscode-eslint",
       "oouo-diogo-perdigao.docthis"
     ]
   }

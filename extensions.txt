@@ -1,11 +1,9 @@
+charliermarsh.ruff
 dbaeumer.vscode-eslint
 github.copilot
 github.copilot-chat
 mads-hartmann.bash-ide-vscode
 mechatroner.rainbow-csv
-ms-azuretools.vscode-containers
-ms-azuretools.vscode-docker
-ms-python.black-formatter
 ms-python.debugpy
 ms-python.mypy-type-checker
 ms-python.python
