@@ -5,8 +5,6 @@
     }
   ],
   "settings": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true,
     "python.analysis.autoSearchPaths": true,

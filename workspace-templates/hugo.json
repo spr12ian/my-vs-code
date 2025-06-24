@@ -1,12 +1,10 @@
 {
   "settings": {
-    "editor.wordWrap": "on",
     "editor.quickSuggestions": {
       "comments": false,
       "strings": true,
       "other": true
     },
-    "editor.formatOnSave": true,
     "markdownlint.config": {
       "default": true
     }

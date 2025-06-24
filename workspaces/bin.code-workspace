@@ -5,8 +5,11 @@
     }
   ],
   "settings": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.git": true,
+      "**/.hatch": true
+    },
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true,
     "[shellscript]": {
@@ -17,8 +20,13 @@
   },
   "extensions": {
     "recommendations": [
+      "aaron-bond.better-comments",
+      "editorconfig.editorconfig",
+      "eamodio.gitlens",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
       "yzhang.markdown-all-in-one"
     ]
   }

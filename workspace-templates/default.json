@@ -5,16 +5,12 @@
     }
   ],
   "settings": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": true,
-    "editor.rulers": [
-      88
-    ],
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true
   },
   "extensions": {
     "recommendations": [
+      "eamodio.gitlens",
       "yzhang.markdown-all-in-one"
     ]
   }
