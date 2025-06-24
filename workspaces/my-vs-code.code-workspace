@@ -11,6 +11,21 @@
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
       "editor.tabSize": 2
-    }
+    },
+    "cSpell.words": [
+      "charliermarsh",
+      "debugpy",
+      "deepseek",
+      "eamodio",
+      "foxundermoon",
+      "pycache",
+      "pylance",
+      "pytest",
+      "shellcheck",
+      "tamasfe",
+      "timonwong",
+      "venv",
+      "yzhang"
+    ]
   }
 }
