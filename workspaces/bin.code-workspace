@@ -16,7 +16,13 @@
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
       "editor.tabSize": 2
-    }
+    },
+    "cSpell.words": [
+      "moreutils",
+      "pipx",
+      "poppler",
+      "tesseract"
+    ]
   },
   "extensions": {
     "recommendations": [

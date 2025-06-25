@@ -1,15 +1,18 @@
 {
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
   },
+  "editor.detectIndentation": false,
   "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.minimap.enabled": false,
+  "editor.rulers": [
+    88
+  ],
   "editor.tabSize": 2,
+  "editor.wordWrap": "on",
   "files.autoSave": "afterDelay",
   "files.encoding": "utf8",
   "files.eol": "\n",
@@ -28,10 +31,7 @@
   "makefile.configureOnOpen": false,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.typeCheckingMode": "strict",
-  "ruff-formatter.args": [
-    "--line-length",
-    "88"
-  ],
+  "python.formatting.provider": "none",
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": false,
   "python.linting.lintOnSave": true,
@@ -41,10 +41,20 @@
   ],
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": false,
+  "ruff-formatter.args": [
+    "--line-length",
+    "88"
+  ],
+  "search.useIgnoreFiles": true,
+  "search.useGlobalIgnoreFiles": true,
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
   "shellcheck.enable": true,
+  "shellcheck.executablePath": "shellcheck",
+  "terminal.integrated.defaultProfile.linux": "bash",
   "workbench.colorTheme": "Default Dark+",
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.startupEditor": "none",
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
