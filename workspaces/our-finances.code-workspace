@@ -7,7 +7,6 @@
   "settings": {
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true,
-
     "python.analysis.autoSearchPaths": true,
     "python.analysis.useLibraryCodeForTypes": true,
     "python.formatting.provider": "none",
@@ -15,7 +14,13 @@
     "python.linting.ruffEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "python.venvPath": "${workspaceFolder}/.venv"
+    "python.venvPath": "${workspaceFolder}/.venv",
+    "cSpell.words": [
+      "getcontext",
+      "HMRC",
+      "nics",
+      "nino"
+    ]
   },
   "extensions": {
     "recommendations": [
