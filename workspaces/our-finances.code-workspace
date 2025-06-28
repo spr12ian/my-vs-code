@@ -18,8 +18,12 @@
     "cSpell.words": [
       "getcontext",
       "HMRC",
+      "mypy",
       "nics",
-      "nino"
+      "nino",
+      "pycache",
+      "pytest",
+      "venv"
     ]
   },
   "extensions": {

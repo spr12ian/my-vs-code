@@ -3,6 +3,7 @@
 # bash is required for some of the syntax used in the Makefile
 SHELL := /bin/bash
 
+
 # Check jq installed
 ifeq (, $(shell which jq))
 $(error jq is not installed. Please install jq to use this Makefile.)
@@ -20,6 +21,8 @@ endif
 
 LOCAL_SETTINGS_FILE := Code/User/settings.json
 
+PYTHON_DIR=workspace_generator
+
 .PHONY: \
 	a_z_settings \
 	compare \
@@ -35,6 +38,7 @@ LOCAL_SETTINGS_FILE := Code/User/settings.json
 	list_extensions_remote_installed_json \
 	load_extensions \
 	settings_file_exists \
+	toml_to_json \
 	tree
 
 a_z_settings: ## Put settings.json in alphabetical order
@@ -117,5 +121,10 @@ load_extensions:
 	xargs -n 1 code --install-extension < extensions.txt
 	@echo "Extensions loaded successfully."
 
+toml_to_json: ## Convert TOML file to JSON
+	@echo "Converting $(FILE) to JSON..." && \
+	python3 $(PYTHON_DIR)/scripts/toml_to_json.py $(FILE) && \
+	echo "Conversion complete."
+
 tree: ## list contents of directories in a tree-like format
-	tree -I '__pycache__|.git|.hatch' -a -F
+	tree -I '__pycache__|.git|.hatch' -a -F -I '__pycache__' -I '.git' -I '.hatch' -I '.mypy_cache' -I '.pytest_cache' -I '.ruff_cache' -I '.venv'

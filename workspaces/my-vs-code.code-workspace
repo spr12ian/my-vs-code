@@ -35,9 +35,11 @@
       "pylance",
       "pylint",
       "pytest",
+      "setuptools",
       "shellcheck",
       "tamasfe",
       "timonwong",
+      "tomllib",
       "usernamehw",
       "venv",
       "yzhang"
