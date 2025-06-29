@@ -1,12 +1,13 @@
 {
   "settings": {
+    "files.exclude": {
+      "**/*.mypy_cache": true,
+      "**/*.pyc": true,
+      "**/__pycache__": true
+    },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.tabSize": 4,
-      "files.exclude": {
-        "**/*.pyc": true,
-        "**/__pycache__": true
-      }
+      "editor.tabSize": 4
     },
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
@@ -16,10 +17,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": false,
     "python.linting.lintOnSave": true,
-    "python.linting.mypyArgs": [
-      "--ignore-missing-imports",
-      "--strict"
-    ],
+    "python.linting.mypyArgs": ["--ignore-missing-imports", "--strict"],
     "python.linting.mypyEnabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.ruffEnabled": true,

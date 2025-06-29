@@ -1,20 +1,20 @@
 {
-  "extensions": {
-    "recommendations": [
-      "yzhang.markdown-all-in-one",
-      "aaron-bond.better-comments",
-      "editorconfig.editorconfig",
-      "foxundermoon.shell-format",
-      "mads-hartmann.bash-ide-vscode",
-      "streetsidesoftware.code-spell-checker",
-      "timonwong.shellcheck"
-    ]
-  },
   "folders": [
     {
       "path": "../../bin"
     }
   ],
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "editorconfig.editorconfig",
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
   "settings": {
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",

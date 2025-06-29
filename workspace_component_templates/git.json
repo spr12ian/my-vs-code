@@ -1,7 +1,10 @@
 {
   "settings": {
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true
+    "files.exclude": {
+      "**/.git": true
+    },
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false
   },
   "extensions": {
     "recommendations": ["eamodio.gitlens"]
