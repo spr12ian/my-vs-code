@@ -1,33 +1,44 @@
-import os
+import json
+from pathlib import Path
 
-def generate_workspace(workspace_name, base_path):
+
+def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
-    Generates a workspace directory structure with a README file.
+    Generates a vscode workspace file (template).
 
     Args:
         workspace_name (str): The name of the workspace.
         base_path (str): The base path where the workspace will be created.
     """
-    workspace_path = os.path.join(base_path, workspace_name)
+    workspace_path = base_path / (workspace_name + ".code-workspace")
 
-    # Create the workspace directory
-    os.makedirs(workspace_path, exist_ok=True)
+    header = {"folders": [{"path": f"../../{workspace_name}"}]}
 
-    # Create a README file in the workspace directory
-    readme_path = os.path.join(workspace_path, "README.md")
-    with open(readme_path, "w") as readme_file:
-        readme_file.write(f"# {workspace_name}\n\nThis is the {workspace_name} workspace.\n")
+    data = json.dumps(header, indent=2, sort_keys=True)
+
+    with open(workspace_path, "w") as workspace_file:
+        workspace_file.write(data)
 
     print(f"Workspace '{workspace_name}' created at '{workspace_path}'.")
+
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Generate a workspace directory structure.")
-    parser.add_argument("workspace_name", type=str, help="The name of the workspace to create.")
-    parser.add_argument("--base_path", type=str, default=".", help="The base path where the workspace will be created.")
+    parser = argparse.ArgumentParser(
+        description="Generate a workspace directory structure."
+    )
+    parser.add_argument(
+        "workspace_name", type=str, help="The name of the workspace to create."
+    )
+    parser.add_argument(
+        "--base_path",
+        type=str,
+        default=".",
+        help="The base path where the workspace will be created.",
+    )
 
     args = parser.parse_args()
 
-    project_dir = os.environ.get("GITHUB_PARENT_DIR_DIR", args.base_path)
-    generate_workspace(args.workspace_name, project_dir)
+    workspace_dir = Path("generated_workspaces")
+    generate_workspace(args.workspace_name, workspace_dir)
