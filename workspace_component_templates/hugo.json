@@ -12,9 +12,6 @@
   "extensions": {
     "recommendations": [
       "budparr.language-hugo-vscode",
-      "davidanson.vscode-markdownlint",
-      "esbenp.prettier-vscode",
-      "yzhang.markdown-all-in-one"
-    ]
+      "davidanson.vscode-markdownlint"    ]
   }
 }

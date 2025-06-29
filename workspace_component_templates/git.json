@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true
+  },
+  "extensions": {
+    "recommendations": ["eamodio.gitlens"]
+  }
+}

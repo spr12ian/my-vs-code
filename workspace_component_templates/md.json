@@ -1,16 +1,6 @@
 {
-  "folders": [
-    {
-      "path": "../../PROJECT"
-    }
-  ],
-  "settings": {
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true
-  },
   "extensions": {
     "recommendations": [
-      "eamodio.gitlens",
       "yzhang.markdown-all-in-one"
     ]
   }
