@@ -6,12 +6,14 @@
   ],
   "extensions": {
     "recommendations": [
+      "christian-kohler.path-intellisense",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
       "oouo-diogo-perdigao.docthis",
-      "rbbit.typescript-hero",
+      "pmneo.tsimporter",
       "usernamehw.errorlens",
+      "usernamehw.errorlense",
       "yzhang.markdown-all-in-one"
     ]
   },
