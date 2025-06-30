@@ -49,7 +49,7 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
     header = {"folders": [{"path": f"../../{workspace_name}"}]}
 
     workspace_suffixes = get_workspace_suffixes(workspace_name)
-    
+
     for suffix, count in sorted(workspace_suffixes.items()):
         if suffix != "No suffix":
             component_template = Path(
@@ -101,19 +101,30 @@ def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
     return tree.get_suffixes(projects_dir / workspace_name)
 
 
-def get_workspace_name() -> str:
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Generate a workspace template.")
-    parser.add_argument(
-        "workspace_name", type=str, help="The name of the workspace to create."
-    )
-
-    args = parser.parse_args()
-
-    return args.workspace_name
-
+def get_projects_dir():
+    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
+    if github_parent_dir is None:
+        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
+    projects_dir = Path(github_parent_dir)
+    print(projects_dir)
+    if not projects_dir.exists():
+        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set or invalid.")
+    if not projects_dir.is_dir():
+        raise EnvironmentError("GITHUB_PARENT_DIR is not a directory.")
+    if not projects_dir.is_absolute():
+        projects_dir = projects_dir.resolve()
+    return projects_dir
 
 if __name__ == "__main__":
     workspace_dir = Path("generated_workspaces")
-    generate_workspace(get_workspace_name(), workspace_dir)
+    if not workspace_dir.exists():
+        workspace_dir.mkdir(parents=True)
+    projects_dir = get_projects_dir()
+
+    entries = sorted(
+        [entry for entry in projects_dir.iterdir()]
+    )
+
+    for entry in entries:
+        if entry.is_dir():
+            generate_workspace(entry.name, workspace_dir)

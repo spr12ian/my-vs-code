@@ -10,14 +10,14 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true
     },
+    "files.exclude": {
+      "**/*.mypy_cache": true,
+      "**/*.pyc": true,
+      "**/__pycache__": true
+    },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.tabSize": 4,
-      "files.exclude": {
-        "**/*.mypy_cache": true,
-        "**/*.pyc": true,
-        "**/__pycache__": true
-      }
+      "editor.tabSize": 4
     },
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
