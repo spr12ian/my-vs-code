@@ -43,8 +43,12 @@
     },
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "typescript.preferences.quoteStyle": "single",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.eslint": true
+    },
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.suggest.completeFunctionCalls": true
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.preferences.quoteStyle": "single"
   }
 }
