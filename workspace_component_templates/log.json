@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "files.associations": {
+      "*.log": "log"
+    },
+    "[log]": {
+      "editor.wordWrap": "on",
+      "editor.lineNumbers": "off",
+      "editor.renderWhitespace": "boundary",
+      "editor.renderControlCharacters": true,
+      "editor.renderIndentGuides": false,
+      "editor.fontSize": 13,
+      "editor.fontFamily": "monospace",
+      "editor.cursorSmoothCaretAnimation": true,
+      "editor.minimap.enabled": false,
+      "editor.folding": false
+    },
+    "search.useIgnoreFiles": false,
+    "search.useGlobalIgnoreFiles": false,
+    "search.quickOpen.includeSymbols": false
+  },
+  "extensions": {
+    "recommendations": ["emilast.LogFileHighlighter"]
+  }
+}

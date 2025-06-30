@@ -1,0 +1,48 @@
+{
+  "folders": [
+    {
+      "path": "../../our_finances_typescript"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "jsoncrack.vscode-jsoncrack",
+      "oouo-diogo-perdigao.docthis",
+      "rbbit.typescript-hero",
+      "usernamehw.errorlens",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
+  "settings": {
+    "[json]": {
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "files.associations": {
+      "*.ts": "typescript",
+      "*.tsx": "typescriptreact"
+    },
+    "[typescript]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "typescript.preferences.quoteStyle": "single",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.completeFunctionCalls": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "files.associations": {
+      "*.toml": "toml"
+    },
+    "[toml]": {
+      "editor.wordWrap": "off",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "taplo.toml"
+    },
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  },
+  "extensions": {
+    "recommendations": [
+      "streetsidesoftware.code-spell-checker",
+      "tamasfe.even-better-toml",
+      "taplo.taplo-vscode",
+      "usernamehw.errorlens"
+    ]
+  }
+}

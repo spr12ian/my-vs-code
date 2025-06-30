@@ -40,7 +40,20 @@
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
       "editor.tabSize": 2
-    }
+    },
+    "files.associations": {
+      "*.toml": "toml"
+    },
+    "[toml]": {
+      "editor.wordWrap": "off",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "taplo.toml"
+    },
+    "editor.detectIndentation": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
   },
   "extensions": {
     "recommendations": [
@@ -56,6 +69,7 @@
       "ms-vscode.debugpy",
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
+      "taplo.taplo-vscode",
       "timonwong.shellcheck",
       "usernamehw.errorlens",
       "yzhang.markdown-all-in-one"

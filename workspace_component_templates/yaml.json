@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "files.associations": {
+      "*.yaml": "yaml",
+      "*.yml": "yaml"
+    },
+    "[yaml]": {
+      "editor.wordWrap": "on",
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  },
+  "extensions": {
+    "recommendations": [
+      "martinring.yaml-path",
+      "redhat.vscode-yaml",
+      "streetsidesoftware.code-spell-checker"
+    ]
+  }
+}
