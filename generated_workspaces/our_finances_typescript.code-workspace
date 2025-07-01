@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "path": "../../our_finances_typescript"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "yzhang.markdown-all-in-one"
+    ]
+  }
+}
