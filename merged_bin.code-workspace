@@ -1,0 +1,39 @@
+{
+  "folders": [
+    {
+      "path": "../../bin"
+    }
+  ],
+  "settings": {
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/.git": true,
+      "**/.hatch": true
+    },
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true,
+    "cSpell.words": [
+      "moreutils",
+      "pipx",
+      "poppler",
+      "tesseract"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
+      "yzhang.markdown-all-in-one"
+    ]
+  }
+}

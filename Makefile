@@ -69,6 +69,16 @@ find_all:
 	@find ~ -type f -name settings.json | grep -i ".vscode\|Code/User" || true
 	@echo "NOTE: settings.json in ~/.vscode-server is auto-generated. Do not edit manually."
 
+generate_workspaces: ## Generate workspaces
+	@echo "Generating workspaces..." && \
+	python3 $(PYTHON_DIR)/scripts/generate_workspaces.py && \
+	echo "Workspaces generated in generated_workspaces."
+
+merge_workspaces: ## Merge workspaces
+	@echo "Merging workspaces..." && \
+	python3 $(PYTHON_DIR)/scripts/merge_workspaces.py && \
+	echo "Workspaces merged."
+
 help:  ## Auto-generate help from target comments
 	@awk 'BEGIN {FS = ":.*?## "}; \
 		/^[a-zA-Z_-]+:.*?## / { \
@@ -125,6 +135,3 @@ toml_to_json: ## Convert TOML file to JSON
 	@echo "Converting $(FILE) to JSON..." && \
 	python3 $(PYTHON_DIR)/scripts/toml_to_json.py $(FILE) && \
 	echo "Conversion complete."
-
-tree: ## list contents of directories in a tree-like format
-	tree -I '__pycache__|.git|.hatch' -a -F -I '__pycache__' -I '.git' -I '.hatch' -I '.mypy_cache' -I '.pytest_cache' -I '.ruff_cache' -I '.venv'

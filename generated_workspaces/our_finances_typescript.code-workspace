@@ -6,7 +6,49 @@
   ],
   "extensions": {
     "recommendations": [
+      "christian-kohler.path-intellisense",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "jsoncrack.vscode-jsoncrack",
+      "oouo-diogo-perdigao.docthis",
+      "pmneo.tsimporter",
+      "usernamehw.errorlens",
+      "usernamehw.errorlense",
       "yzhang.markdown-all-in-one"
     ]
+  },
+  "settings": {
+    "[json]": {
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "files.associations": {
+      "*.ts": "typescript",
+      "*.tsx": "typescriptreact"
+    },
+    "[typescript]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.eslint": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.preferences.quoteStyle": "single"
   }
 }
