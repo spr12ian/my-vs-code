@@ -1,0 +1,46 @@
+{
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "jsoncrack.vscode-jsoncrack",
+      "ms-vscode-remote.remote-wsl",
+      "oouo-diogo-perdigao.docthis",
+      "streetsidesoftware.code-spell-checker",
+      "usernamehw.errorlens",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
+  "folders": [
+    {
+      "path": "../../key_value_logger"
+    }
+  ],
+  "settings": {
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "cSpell.language": "en-GB",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "files.exclude": {
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/node_modules": true
+    },
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false,
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 88,
+    "terminal.integrated.defaultProfile.linux": "bash"
+  }
+}
