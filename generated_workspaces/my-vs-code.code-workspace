@@ -33,14 +33,14 @@
       "editor.tabSize": 2
     },
     "[log]": {
-      "editor.cursorSmoothCaretAnimation": true,
+      "editor.cursorSmoothCaretAnimation": "on",
       "editor.folding": false,
       "editor.fontFamily": "monospace",
       "editor.fontSize": 13,
+      "editor.guides.indentation": false,
       "editor.lineNumbers": "off",
       "editor.minimap.enabled": false,
       "editor.renderControlCharacters": true,
-      "editor.renderIndentGuides": false,
       "editor.renderWhitespace": "boundary",
       "editor.wordWrap": "on"
     },

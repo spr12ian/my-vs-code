@@ -4,16 +4,16 @@
       "*.log": "log"
     },
     "[log]": {
-      "editor.wordWrap": "on",
-      "editor.lineNumbers": "off",
-      "editor.renderWhitespace": "boundary",
-      "editor.renderControlCharacters": true,
-      "editor.renderIndentGuides": false,
-      "editor.fontSize": 13,
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.folding": false,
       "editor.fontFamily": "monospace",
-      "editor.cursorSmoothCaretAnimation": true,
+      "editor.fontSize": 13,
+      "editor.guides.indentation": false,
+      "editor.lineNumbers": "off",
       "editor.minimap.enabled": false,
-      "editor.folding": false
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "boundary",
+      "editor.wordWrap": "on"
     },
     "search.useIgnoreFiles": false,
     "search.useGlobalIgnoreFiles": false,
