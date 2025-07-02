@@ -1,4 +1,25 @@
 {
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "charliermarsh.ruff",
+      "editorconfig.editorconfig",
+      "emilast.LogFileHighlighter",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "jsoncrack.vscode-jsoncrack",
+      "mads-hartmann.bash-ide-vscode",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-vscode.debugpy",
+      "streetsidesoftware.code-spell-checker",
+      "tamasfe.even-better-toml",
+      "taplo.taplo-vscode",
+      "timonwong.shellcheck",
+      "usernamehw.errorlens",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
   "folders": [
     {
       "path": "../../my-vs-code"
@@ -6,19 +27,49 @@
   ],
   "settings": {
     "[json]": {
-      "editor.tabSize": 2,
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "[log]": {
+      "editor.cursorSmoothCaretAnimation": true,
+      "editor.folding": false,
+      "editor.fontFamily": "monospace",
+      "editor.fontSize": 13,
+      "editor.lineNumbers": "off",
+      "editor.minimap.enabled": false,
+      "editor.renderControlCharacters": true,
+      "editor.renderIndentGuides": false,
+      "editor.renderWhitespace": "boundary",
+      "editor.wordWrap": "on"
+    },
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.tabSize": 4
+    },
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "[toml]": {
+      "editor.defaultFormatter": "taplo.toml",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.wordWrap": "off"
+    },
+    "editor.detectIndentation": false,
+    "files.associations": {
+      "*.toml": "toml"
     },
     "files.exclude": {
       "**/*.mypy_cache": true,
       "**/*.pyc": true,
       "**/__pycache__": true
     },
-    "[python]": {
-      "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.tabSize": 4
-    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.typeCheckingMode": "strict",
@@ -36,43 +87,8 @@
     "python.linting.ruffEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2
-    },
-    "files.associations": {
-      "*.toml": "toml"
-    },
-    "[toml]": {
-      "editor.wordWrap": "off",
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "taplo.toml"
-    },
-    "editor.detectIndentation": false,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
-  },
-  "extensions": {
-    "recommendations": [
-      "aaron-bond.better-comments",
-      "charliermarsh.ruff",
-      "editorconfig.editorconfig",
-      "esbenp.prettier-vscode",
-      "foxundermoon.shell-format",
-      "jsoncrack.vscode-jsoncrack",
-      "mads-hartmann.bash-ide-vscode",
-      "ms-python.python",
-      "ms-python.vscode-pylance",
-      "ms-vscode.debugpy",
-      "streetsidesoftware.code-spell-checker",
-      "tamasfe.even-better-toml",
-      "taplo.taplo-vscode",
-      "timonwong.shellcheck",
-      "usernamehw.errorlens",
-      "yzhang.markdown-all-in-one"
-    ]
+    "search.quickOpen.includeSymbols": false,
+    "search.useGlobalIgnoreFiles": false,
+    "search.useIgnoreFiles": false
   }
 }

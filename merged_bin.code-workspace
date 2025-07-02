@@ -1,29 +1,4 @@
 {
-  "folders": [
-    {
-      "path": "../../bin"
-    }
-  ],
-  "settings": {
-    "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2
-    },
-    "files.exclude": {
-      "**/__pycache__": true,
-      "**/.git": true,
-      "**/.hatch": true
-    },
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true,
-    "cSpell.words": [
-      "moreutils",
-      "pipx",
-      "poppler",
-      "tesseract"
-    ]
-  },
   "extensions": {
     "recommendations": [
       "aaron-bond.better-comments",
@@ -35,5 +10,30 @@
       "timonwong.shellcheck",
       "yzhang.markdown-all-in-one"
     ]
+  },
+  "folders": [
+    {
+      "path": "../../bin"
+    }
+  ],
+  "settings": {
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "cSpell.words": [
+      "moreutils",
+      "pipx",
+      "poppler",
+      "tesseract"
+    ],
+    "files.exclude": {
+      "**/.git": true,
+      "**/.hatch": true,
+      "**/__pycache__": true
+    },
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false
   }
 }

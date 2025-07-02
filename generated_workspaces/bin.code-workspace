@@ -1,9 +1,4 @@
 {
-  "folders": [
-    {
-      "path": "../../bin"
-    }
-  ],
   "extensions": {
     "recommendations": [
       "aaron-bond.better-comments",
@@ -15,6 +10,11 @@
       "yzhang.markdown-all-in-one"
     ]
   },
+  "folders": [
+    {
+      "path": "../../bin"
+    }
+  ],
   "settings": {
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",

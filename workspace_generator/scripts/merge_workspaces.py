@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from deep_sort import deep_sort
+
 def load_workspace(path:Path) -> dict:
     with open(path) as f:
         return json.load(f)
@@ -23,7 +25,7 @@ def merge_workspaces(ws1:dict, ws2:dict) -> dict:
         "recommendations": sorted(set(rec1 + rec2))
     }
 
-    return merged
+    return deep_sort(merged)
 
 g_dir = Path("generated_workspaces")
 w_dir = Path("workspaces")

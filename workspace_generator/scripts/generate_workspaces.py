@@ -2,6 +2,8 @@ import json
 import os
 from pathlib import Path
 
+from deep_sort import deep_sort
+
 IGNORE_LIST = [".git", ".hg", ".mypy_cache", ".svn", "__pycache__", "venv"]
 
 
@@ -27,14 +29,17 @@ class Tree:
 
     def walk(self, directory: Path) -> None:
         entries = sorted(
-            [entry for entry in directory.iterdir() if entry.name not in self.ignoreList]
+            [
+                entry
+                for entry in directory.iterdir()
+                if entry.name not in self.ignoreList
+            ]
         )
 
         for entry in entries:
             self.register(entry)
             if entry.is_dir():
                 self.walk(entry)
-
 
 def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
@@ -46,7 +51,7 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
     workspace_path = base_path / (workspace_name + ".code-workspace")
 
-    header = {"folders": [{"path": f"../../{workspace_name}"}]}
+    json_data = {"folders": [{"path": f"../../{workspace_name}"}]}
 
     workspace_suffixes = get_workspace_suffixes(workspace_name)
 
@@ -63,31 +68,46 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
                         print(f"⚠️ Skipping invalid JSON template: {component_template}")
                         continue
                     if "folders" in template_data:
-                        header["folders"].extend(template_data["folders"])
+                        json_data["folders"].extend(template_data["folders"])
                     if "settings" in template_data:
-                        header.setdefault("settings", {}).update(
+                        json_data.setdefault("settings", {}).update(
                             template_data["settings"]
                         )
                     if "extensions" in template_data:
-                        header.setdefault("extensions", {}).setdefault(
+                        json_data.setdefault("extensions", {}).setdefault(
                             "recommendations", []
                         ).extend(template_data["extensions"]["recommendations"])
 
     # Deduplicate recommendations if they exist
-    if "extensions" in header and "recommendations" in header["extensions"]:
-        header["extensions"]["recommendations"] = list(
-            sorted(set(header["extensions"]["recommendations"]))
+    if "extensions" in json_data and "recommendations" in json_data["extensions"]:
+        json_data["extensions"]["recommendations"] = list(
+            sorted(set(json_data["extensions"]["recommendations"]))
         )
 
-    data = json.dumps(header, indent=2)
+    sorted_data = deep_sort(json_data)
 
-    # Ensure output directory exists
-    workspace_path.parent.mkdir(parents=True, exist_ok=True)
+    data = json.dumps(sorted_data, indent=2)
+    # Ensure final newline
+    data += "\n"
 
-    with open(workspace_path, "w") as workspace_file:
-        workspace_file.write(data)
+    write_workspace_file(workspace_path, data)
 
-    print(f"Workspace '{workspace_name}' created at '{workspace_path}'.")
+
+def get_projects_dir():
+    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
+    if github_parent_dir is None:
+        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
+    projects_dir = Path(github_parent_dir)
+    print(projects_dir)
+    if not projects_dir.exists():
+        raise EnvironmentError(
+            "GITHUB_PARENT_DIR environment variable is not set or invalid."
+        )
+    if not projects_dir.is_dir():
+        raise EnvironmentError("GITHUB_PARENT_DIR is not a directory.")
+    if not projects_dir.is_absolute():
+        projects_dir = projects_dir.resolve()
+    return projects_dir
 
 
 def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
@@ -101,19 +121,15 @@ def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
     return tree.get_suffixes(projects_dir / workspace_name)
 
 
-def get_projects_dir():
-    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
-    if github_parent_dir is None:
-        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
-    projects_dir = Path(github_parent_dir)
-    print(projects_dir)
-    if not projects_dir.exists():
-        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set or invalid.")
-    if not projects_dir.is_dir():
-        raise EnvironmentError("GITHUB_PARENT_DIR is not a directory.")
-    if not projects_dir.is_absolute():
-        projects_dir = projects_dir.resolve()
-    return projects_dir
+def write_workspace_file(workspace_path: Path, data: str) -> None:
+    # Ensure output directory exists
+    workspace_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(workspace_path, "w") as workspace_file:
+        workspace_file.write(data)
+
+    print(f"Workspace created: '{workspace_path}'")
+
 
 if __name__ == "__main__":
     workspace_dir = Path("generated_workspaces")
@@ -121,9 +137,7 @@ if __name__ == "__main__":
         workspace_dir.mkdir(parents=True)
     projects_dir = get_projects_dir()
 
-    entries = sorted(
-        [entry for entry in projects_dir.iterdir()]
-    )
+    entries = sorted([entry for entry in projects_dir.iterdir()])
 
     for entry in entries:
         if entry.is_dir():

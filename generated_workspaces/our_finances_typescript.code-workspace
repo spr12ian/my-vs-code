@@ -1,9 +1,4 @@
 {
-  "folders": [
-    {
-      "path": "../../our_finances_typescript"
-    }
-  ],
   "extensions": {
     "recommendations": [
       "christian-kohler.path-intellisense",
@@ -17,38 +12,43 @@
       "yzhang.markdown-all-in-one"
     ]
   },
+  "folders": [
+    {
+      "path": "../../our_finances_typescript"
+    }
+  ],
   "settings": {
     "[json]": {
-      "editor.tabSize": 2,
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.detectIndentation": false,
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": "explicit"
     },
     "files.associations": {
       "*.ts": "typescript",
       "*.tsx": "typescriptreact"
     },
-    "[typescript]": {
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.detectIndentation": false,
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.detectIndentation": false,
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll.eslint": true
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.trimTrailingWhitespace": true,
+    "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.updateImportsOnFileMove.enabled": "always"
   }
 }
