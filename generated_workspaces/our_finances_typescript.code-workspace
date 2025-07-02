@@ -3,6 +3,7 @@
     "recommendations": [
       "christian-kohler.path-intellisense",
       "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
       "oouo-diogo-perdigao.docthis",
@@ -45,8 +46,13 @@
       "*.ts": "typescript",
       "*.tsx": "typescriptreact"
     },
+    "files.exclude": {
+      "**/.git": true
+    },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false,
     "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.updateImportsOnFileMove.enabled": "always"

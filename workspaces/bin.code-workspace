@@ -1,17 +1,22 @@
 {
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
   "folders": [
     {
       "path": "../../bin"
     }
   ],
   "settings": {
-    "files.exclude": {
-      "**/__pycache__": true,
-      "**/.git": true,
-      "**/.hatch": true
-    },
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true,
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
@@ -23,18 +28,13 @@
       "pipx",
       "poppler",
       "tesseract"
-    ]
-  },
-  "extensions": {
-    "recommendations": [
-      "aaron-bond.better-comments",
-      "editorconfig.editorconfig",
-      "eamodio.gitlens",
-      "foxundermoon.shell-format",
-      "mads-hartmann.bash-ide-vscode",
-      "streetsidesoftware.code-spell-checker",
-      "timonwong.shellcheck",
-      "yzhang.markdown-all-in-one"
-    ]
+    ],
+    "files.exclude": {
+      "**/.git": true,
+      "**/.hatch": true,
+      "**/__pycache__": true
+    },
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false
   }
 }

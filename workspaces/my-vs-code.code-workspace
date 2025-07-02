@@ -1,16 +1,36 @@
 {
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "charliermarsh.ruff",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "emilast.LogFileHighlighter",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "jsoncrack.vscode-jsoncrack",
+      "mads-hartmann.bash-ide-vscode",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-vscode.debugpy",
+      "streetsidesoftware.code-spell-checker",
+      "tamasfe.even-better-toml",
+      "taplo.taplo-vscode",
+      "timonwong.shellcheck",
+      "usernamehw.errorlens",
+      "yzhang.markdown-all-in-one"
+    ]
+  },
   "folders": [
     {
       "path": "../../my-vs-code"
     }
   ],
   "settings": {
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true,
     "[json]": {
-      "editor.tabSize": 2,
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
     },
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
@@ -54,13 +74,8 @@
       "usernamehw",
       "venv",
       "yzhang"
-    ]
-  },
-  "extensions": {
-    "recommendations": [
-      "esbenp.prettier-vscode",
-      "jsoncrack.vscode-jsoncrack",
-      "usernamehw.errorlens"
-    ]
+    ],
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true
   }
 }

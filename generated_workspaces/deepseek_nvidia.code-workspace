@@ -2,6 +2,7 @@
   "extensions": {
     "recommendations": [
       "charliermarsh.ruff",
+      "eamodio.gitlens",
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
       "martinring.yaml-path",
@@ -58,6 +59,8 @@
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.typeCheckingMode": "strict",

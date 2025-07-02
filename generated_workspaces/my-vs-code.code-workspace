@@ -3,6 +3,7 @@
     "recommendations": [
       "aaron-bond.better-comments",
       "charliermarsh.ruff",
+      "eamodio.gitlens",
       "editorconfig.editorconfig",
       "emilast.LogFileHighlighter",
       "esbenp.prettier-vscode",
@@ -70,6 +71,8 @@
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.typeCheckingMode": "strict",

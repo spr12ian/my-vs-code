@@ -2,6 +2,7 @@
   "extensions": {
     "recommendations": [
       "aaron-bond.better-comments",
+      "eamodio.gitlens",
       "editorconfig.editorconfig",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
@@ -20,6 +21,11 @@
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
       "editor.tabSize": 2
-    }
+    },
+    "files.exclude": {
+      "**/.git": true
+    },
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false
   }
 }

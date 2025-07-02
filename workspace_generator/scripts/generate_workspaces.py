@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-from deep_sort import deep_sort
+from utils import deep_sort, get_projects
 
 IGNORE_LIST = [".git", ".hg", ".mypy_cache", ".svn", "__pycache__", "venv"]
 
@@ -10,7 +10,7 @@ IGNORE_LIST = [".git", ".hg", ".mypy_cache", ".svn", "__pycache__", "venv"]
 class Tree:
     def __init__(self) -> None:
         self.ignoreList: list[str] = []
-        self.file_suffixes: dict[str, int] = {}
+        self.file_suffixes: dict[str, int] = {".git": 1}
 
     def get_suffixes(self, directory: Path) -> dict[str, int]:
         """
@@ -40,6 +40,7 @@ class Tree:
             self.register(entry)
             if entry.is_dir():
                 self.walk(entry)
+
 
 def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
@@ -93,23 +94,6 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
     write_workspace_file(workspace_path, data)
 
 
-def get_projects_dir():
-    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
-    if github_parent_dir is None:
-        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
-    projects_dir = Path(github_parent_dir)
-    print(projects_dir)
-    if not projects_dir.exists():
-        raise EnvironmentError(
-            "GITHUB_PARENT_DIR environment variable is not set or invalid."
-        )
-    if not projects_dir.is_dir():
-        raise EnvironmentError("GITHUB_PARENT_DIR is not a directory.")
-    if not projects_dir.is_absolute():
-        projects_dir = projects_dir.resolve()
-    return projects_dir
-
-
 def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
     github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
     if github_parent_dir is None:
@@ -135,10 +119,8 @@ if __name__ == "__main__":
     workspace_dir = Path("generated_workspaces")
     if not workspace_dir.exists():
         workspace_dir.mkdir(parents=True)
-    projects_dir = get_projects_dir()
 
-    entries = sorted([entry for entry in projects_dir.iterdir()])
+    projects = get_projects()
 
-    for entry in entries:
-        if entry.is_dir():
-            generate_workspace(entry.name, workspace_dir)
+    for project in projects:
+        generate_workspace(project.name, workspace_dir)

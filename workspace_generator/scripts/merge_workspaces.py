@@ -1,13 +1,15 @@
 import json
 from pathlib import Path
 
-from deep_sort import deep_sort
+from utils import deep_sort
 
-def load_workspace(path:Path) -> dict:
+
+def load_workspace(path: Path) -> dict:
     with open(path) as f:
         return json.load(f)
 
-def merge_workspaces(ws1:dict, ws2:dict) -> dict:
+
+def merge_workspaces(ws1: dict, ws2: dict) -> dict:
     merged = {}
     # Merge folders
     folders1 = ws1.get("folders", [])
@@ -21,21 +23,22 @@ def merge_workspaces(ws1:dict, ws2:dict) -> dict:
     # Merge extensions.recommendations
     rec1 = ws1.get("extensions", {}).get("recommendations", [])
     rec2 = ws2.get("extensions", {}).get("recommendations", [])
-    merged["extensions"] = {
-        "recommendations": sorted(set(rec1 + rec2))
-    }
+    merged["extensions"] = {"recommendations": sorted(set(rec1 + rec2))}
 
     return deep_sort(merged)
 
-g_dir = Path("generated_workspaces")
-w_dir = Path("workspaces")
 
-workspace="bin"
+def merge_project(project, load_workspace, merge_workspaces):
+    g_dir = Path("generated_workspaces")
+    w_dir = Path("workspaces")
 
-ws1 = load_workspace(g_dir/f"{workspace}.code-workspace")
-ws2 = load_workspace(w_dir/f"{workspace}.code-workspace")
+    ws1 = load_workspace(g_dir / f"{project}.code-workspace")
+    ws2 = load_workspace(w_dir / f"{project}.code-workspace")
 
-merged = merge_workspaces(ws1, ws2)
+    merged = merge_workspaces(ws1, ws2)
 
-with open(f"merged_{workspace}.code-workspace", "w") as f:
-    json.dump(merged, f, indent=2)
+    with open(f"{g_dir}/merged_{project}.code-workspace", "w") as f:
+        json.dump(merged, f, indent=2)
+
+
+merge_project("my-vs-code", load_workspace, merge_workspaces)
