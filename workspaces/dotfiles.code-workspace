@@ -5,21 +5,33 @@
     }
   ],
   "settings": {
-    "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": true,
-
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2
     },
+    "cSpell.language": "en-GB",
     "cSpell.words": [
       "customisation"
-    ]
+    ],
+    "files.exclude": {
+      "**/.git": true
+    },
+    "git.detectSubmodules": false,
+    "git.autoRepositoryDetection": true,
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
     "recommendations": [
+      "aaron-bond.better-comments",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
+      "ms-vscode-remote.remote-wsl",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
       "yzhang.markdown-all-in-one"
     ]
   }
