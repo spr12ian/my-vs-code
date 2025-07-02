@@ -1,9 +1,10 @@
 import json
 import sys
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, cast
 
 from utils import deep_sort, get_projects
+
 
 def compare_lists(path: str, a: list, b: list) -> list[str]:
     """
@@ -29,9 +30,12 @@ def compare_lists(path: str, a: list, b: list) -> list[str]:
     else:
         # Lists contain dicts or mixed types — fallback to basic comparison
         if a != b:
-            return [f"{path}: lists differ (complex structures not diffed element-by-element)"]
+            return [
+                f"{path}: lists differ (complex structures not diffed element-by-element)"
+            ]
         else:
             return []
+
 
 def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     """
@@ -40,9 +44,7 @@ def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     """
     conflicts = []
 
-    IGNORED_PATHS = {
-        "settings.cSpell.words"
-    }
+    IGNORED_PATHS = {"settings.cSpell.words"}
 
     if path in IGNORED_PATHS:
         return []  # Skip this path
@@ -96,7 +98,7 @@ def merge_project(
 
     merged = merge_workspaces(ws1, ws2)
 
-    with open(f"{g_dir}/merged_{project}.code-workspace", "w", encoding="utf-8") as f:
+    with open(f"{g_dir}/merged/{project}.code-workspace", "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2, ensure_ascii=False)
 
         f.write("\n")  # Ensure final newline
@@ -109,7 +111,7 @@ def merge_workspaces(ws1: dict, ws2: dict) -> dict:
             print(f" - {conflict}")
         sys.exit(1)
 
-    merged = {}
+    merged: dict[str, Any] = {}
 
     # Extract folder lists from both workspaces, defaulting to empty lists
 
@@ -122,15 +124,23 @@ def merge_workspaces(ws1: dict, ws2: dict) -> dict:
     # Ensure unique paths and sort by path
     merged["folders"] = sorted(folder_map.values(), key=lambda f: f["path"])
 
+    ws1_settings = ws1.get("settings") or {}
+    ws2_settings = ws2.get("settings") or {}
+
+    if not isinstance(ws1_settings, dict):
+        raise TypeError(f"ws1 settings is not a dict: {type(ws1_settings)}")
+    if not isinstance(ws2_settings, dict):
+        raise TypeError(f"ws2 settings is not a dict: {type(ws2_settings)}")
+
     # Merge settings
-    merged["settings"] = {**ws1.get("settings", {}), **ws2.get("settings", {})}
+    merged["settings"] = {**ws1_settings, **ws2_settings}
 
     # Merge extensions.recommendations
     rec1 = ws1.get("extensions", {}).get("recommendations", [])
     rec2 = ws2.get("extensions", {}).get("recommendations", [])
     merged["extensions"] = {"recommendations": sorted(set(rec1 + rec2))}
 
-    return deep_sort(merged)
+    return cast(dict[Any, Any], deep_sort(merged))
 
 
 projects = get_projects()
