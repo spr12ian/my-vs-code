@@ -10,15 +10,31 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true
     },
-    "files.exclude": {
-      "**/*.mypy_cache": true,
-      "**/*.pyc": true,
-      "**/__pycache__": true
-    },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.tabSize": 4
     },
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.wordWrap": "off"
+    },
+    "editor.detectIndentation": false,
+    "files.associations": {
+      "*.toml": "toml"
+    },
+    "files.exclude": {
+      "**/*.hatch": true,
+      "**/*.mypy_cache": true,
+      "**/*.pyc": true,
+      "**/__pycache__": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "git.autoRepositoryDetection": true,
+    "git.detectSubmodules": false,
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.typeCheckingMode": "strict",
@@ -40,11 +56,13 @@
   "extensions": {
     "recommendations": [
       "charliermarsh.ruff",
+      "eamodio.gitlens",
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
       "ms-python.python",
       "ms-python.vscode-pylance",
       "ms-vscode.debugpy",
+      "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "usernamehw.errorlens",
       "yzhang.markdown-all-in-one"

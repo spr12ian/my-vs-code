@@ -24,7 +24,7 @@ class Tree:
 
     def register(self, path: Path) -> None:
         if not path.is_dir():
-            suffix = path.suffix.lower() if path.suffix else "No suffix"
+            suffix = path.suffix.lower() if path.suffix else ".default"
             self.file_suffixes[suffix] = self.file_suffixes.get(suffix, 0) + 1
 
     def walk(self, directory: Path) -> None:
@@ -123,4 +123,4 @@ if __name__ == "__main__":
     projects = get_projects()
 
     for project in projects:
-        generate_workspace(project.name, workspace_dir)
+        generate_workspace(project, workspace_dir)

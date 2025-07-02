@@ -1,6 +1,7 @@
 {
   "settings": {
     "files.exclude": {
+      "**/*.hatch": true,
       "**/*.mypy_cache": true,
       "**/*.pyc": true,
       "**/__pycache__": true

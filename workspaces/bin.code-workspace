@@ -4,8 +4,10 @@
       "aaron-bond.better-comments",
       "eamodio.gitlens",
       "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
+      "ms-vscode-remote.remote-wsl",
       "streetsidesoftware.code-spell-checker",
       "timonwong.shellcheck",
       "yzhang.markdown-all-in-one"
@@ -23,18 +25,25 @@
       "editor.tabSize": 2
     },
     "cSpell.words": [
+      "chromeos",
+      "dpkg",
+      "githubcli",
       "moreutils",
       "nullglob",
       "pipx",
       "poppler",
-      "tesseract"
+      "shellcheck",
+      "tesseract",
+      "vcode",
+      "whatis",
+      "writable"
     ],
     "files.exclude": {
-      "**/.git": true,
-      "**/.hatch": true,
-      "**/__pycache__": true
+      "**/.git": true
     },
+    "cSpell.language": "en-GB",
     "git.autoRepositoryDetection": true,
-    "git.detectSubmodules": false
+    "git.detectSubmodules": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
   }
 }

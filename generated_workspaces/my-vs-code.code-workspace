@@ -12,10 +12,10 @@
       "mads-hartmann.bash-ide-vscode",
       "ms-python.python",
       "ms-python.vscode-pylance",
+      "ms-vscode-remote.remote-wsl",
       "ms-vscode.debugpy",
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
-      "taplo.taplo-vscode",
       "timonwong.shellcheck",
       "usernamehw.errorlens",
       "yzhang.markdown-all-in-one"
@@ -54,17 +54,19 @@
       "editor.tabSize": 2
     },
     "[toml]": {
-      "editor.defaultFormatter": "taplo.toml",
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
       "editor.formatOnSave": true,
       "editor.insertSpaces": true,
       "editor.tabSize": 2,
       "editor.wordWrap": "off"
     },
+    "cSpell.language": "en-GB",
     "editor.detectIndentation": false,
     "files.associations": {
       "*.toml": "toml"
     },
     "files.exclude": {
+      "**/*.hatch": true,
       "**/*.mypy_cache": true,
       "**/*.pyc": true,
       "**/__pycache__": true
@@ -92,6 +94,7 @@
     "python.testing.unittestEnabled": false,
     "search.quickOpen.includeSymbols": false,
     "search.useGlobalIgnoreFiles": false,
-    "search.useIgnoreFiles": false
+    "search.useIgnoreFiles": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
   }
 }

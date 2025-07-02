@@ -15,7 +15,6 @@
       "ms-vscode.debugpy",
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
-      "taplo.taplo-vscode",
       "timonwong.shellcheck",
       "usernamehw.errorlens",
       "yzhang.markdown-all-in-one"
@@ -67,7 +66,6 @@
       "shellcheck",
       "sqltools",
       "tamasfe",
-      "taplo",
       "timonwong",
       "tomllib",
       "tsimporter",

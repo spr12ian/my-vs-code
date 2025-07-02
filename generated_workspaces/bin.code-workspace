@@ -4,8 +4,10 @@
       "aaron-bond.better-comments",
       "eamodio.gitlens",
       "editorconfig.editorconfig",
+      "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
+      "ms-vscode-remote.remote-wsl",
       "streetsidesoftware.code-spell-checker",
       "timonwong.shellcheck",
       "yzhang.markdown-all-in-one"
@@ -22,10 +24,12 @@
       "editor.formatOnSave": true,
       "editor.tabSize": 2
     },
+    "cSpell.language": "en-GB",
     "files.exclude": {
       "**/.git": true
     },
     "git.autoRepositoryDetection": true,
-    "git.detectSubmodules": false
+    "git.detectSubmodules": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
   }
 }

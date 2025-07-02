@@ -1,21 +1,126 @@
 import json
+import sys
 from pathlib import Path
+from typing import Any, Callable
 
-from utils import deep_sort
+from utils import deep_sort, get_projects
+
+def compare_lists(path: str, a: list, b: list) -> list[str]:
+    """
+    Compare two lists, showing added and removed elements cleanly.
+    Handles lists of scalars; falls back to full comparison for lists of dicts.
+    """
+    if all(isinstance(x, (str, int, float)) for x in a + b):
+        set_a = set(a)
+        set_b = set(b)
+        added = sorted(set_b - set_a)
+        removed = sorted(set_a - set_b)
+
+        if not added and not removed:
+            return []
+
+        lines = [f"{path} differs:"]
+        for item in removed:
+            lines.append(f"   - {item}")
+        for item in added:
+            lines.append(f"   + {item}")
+        return lines
+
+    else:
+        # Lists contain dicts or mixed types — fallback to basic comparison
+        if a != b:
+            return [f"{path}: lists differ (complex structures not diffed element-by-element)"]
+        else:
+            return []
+
+def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
+    """
+    Recursively detect conflicts between two JSON-like structures.
+    Returns a list of conflict descriptions, pretty-printed.
+    """
+    conflicts = []
+
+    IGNORED_PATHS = {
+        "settings.cSpell.words"
+    }
+
+    if path in IGNORED_PATHS:
+        return []  # Skip this path
+
+    if isinstance(a, dict) and isinstance(b, dict):
+        keys = set(a.keys()) | set(b.keys())
+        for k in sorted(keys):
+            sub_path = f"{path}.{k}" if path else k
+            a_val = a.get(k)
+            b_val = b.get(k)
+
+            if k not in a:
+                if sub_path not in IGNORED_PATHS:
+                    conflicts.append(f"{sub_path} only in second file: {b_val}")
+            elif k not in b:
+                if sub_path not in IGNORED_PATHS:
+                    conflicts.append(f"{sub_path} only in first file: {a_val}")
+            else:
+                conflicts.extend(deep_conflict_detection(a_val, b_val, sub_path))
+
+    elif isinstance(a, list) and isinstance(b, list):
+        conflicts.extend(compare_lists(path, a, b))
+
+    else:
+        if a != b:
+            conflicts.append(f"{path}: {a} != {b}")
+
+    return conflicts
 
 
 def load_workspace(path: Path) -> dict:
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
+def merge_project(
+    project: str,
+    load_workspace: Callable[[Path], dict],
+    merge_workspaces: Callable[[dict, dict], dict],
+) -> None:
+    g_dir = Path("generated_workspaces")
+    w_dir = Path("workspaces")
+
+    file1 = g_dir / f"{project}.code-workspace"
+    print(f"First file: {file1}")
+    ws1 = load_workspace(file1)
+
+    file2 = w_dir / f"{project}.code-workspace"
+    print(f"Second file: {file2}")
+    ws2 = load_workspace(file2)
+
+    merged = merge_workspaces(ws1, ws2)
+
+    with open(f"{g_dir}/merged_{project}.code-workspace", "w", encoding="utf-8") as f:
+        json.dump(merged, f, indent=2, ensure_ascii=False)
+
+        f.write("\n")  # Ensure final newline
+
+
 def merge_workspaces(ws1: dict, ws2: dict) -> dict:
+    if conflicts := deep_conflict_detection(ws1, ws2):
+        print("❌ Conflicts detected:")
+        for conflict in conflicts:
+            print(f" - {conflict}")
+        sys.exit(1)
+
     merged = {}
-    # Merge folders
+
+    # Extract folder lists from both workspaces, defaulting to empty lists
+
     folders1 = ws1.get("folders", [])
     folders2 = ws2.get("folders", [])
-    merged["folders"] = {f["path"]: f for f in folders1 + folders2}
-    merged["folders"] = list(merged["folders"].values())
+
+    # Merge folders into a map keyed by unique 'path' to eliminate duplicates
+    folder_map = {f["path"]: f for f in folders1 + folders2}
+
+    # Ensure unique paths and sort by path
+    merged["folders"] = sorted(folder_map.values(), key=lambda f: f["path"])
 
     # Merge settings
     merged["settings"] = {**ws1.get("settings", {}), **ws2.get("settings", {})}
@@ -28,17 +133,8 @@ def merge_workspaces(ws1: dict, ws2: dict) -> dict:
     return deep_sort(merged)
 
 
-def merge_project(project, load_workspace, merge_workspaces):
-    g_dir = Path("generated_workspaces")
-    w_dir = Path("workspaces")
+projects = get_projects()
 
-    ws1 = load_workspace(g_dir / f"{project}.code-workspace")
-    ws2 = load_workspace(w_dir / f"{project}.code-workspace")
-
-    merged = merge_workspaces(ws1, ws2)
-
-    with open(f"{g_dir}/merged_{project}.code-workspace", "w") as f:
-        json.dump(merged, f, indent=2)
-
-
-merge_project("my-vs-code", load_workspace, merge_workspaces)
+for project in projects:
+    print(f"Processing project: {project}")
+    merge_project(project, load_workspace, merge_workspaces)
