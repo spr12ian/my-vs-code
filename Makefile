@@ -74,11 +74,6 @@ generate_workspaces: ## Generate workspaces
 	python3 $(PYTHON_DIR)/scripts/generate_workspaces.py && \
 	echo "Workspaces generated in generated_workspaces."
 
-merge_workspaces: ## Merge workspaces
-	@echo "Merging workspaces..." && \
-	python3 $(PYTHON_DIR)/scripts/merge_workspaces.py && \
-	echo "Workspaces merged."
-
 help:  ## Auto-generate help from target comments
 	@awk 'BEGIN {FS = ":.*?## "}; \
 		/^[a-zA-Z_-]+:.*?## / { \
@@ -130,6 +125,11 @@ load_extensions:
 	@echo "Loading VS Code extensions from extensions.json..."
 	xargs -n 1 code --install-extension < extensions.txt
 	@echo "Extensions loaded successfully."
+
+merge_workspaces: ## Merge workspaces
+	@echo "Merging workspaces..." && \
+	python3 $(PYTHON_DIR)/scripts/merge_workspaces.py && \
+	echo "Workspaces merged."
 
 toml_to_json: ## Convert TOML file to JSON
 	@echo "Converting $(FILE) to JSON..." && \
