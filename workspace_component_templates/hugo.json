@@ -5,13 +5,16 @@
       "strings": true,
       "other": true
     },
-    "markdownlint.config": {
-      "default": true
+    "files.exclude": {
+      "**/.hugo_build.lock": true,
+      "**/public": true,
+      "**/resources": true
+
     }
   },
   "extensions": {
     "recommendations": [
-      "budparr.language-hugo-vscode",
-      "davidanson.vscode-markdownlint"    ]
+      "budparr.language-hugo-vscode"
+    ]
   }
 }

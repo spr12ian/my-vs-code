@@ -2,8 +2,9 @@ import os
 from pathlib import Path
 from typing import Any
 
+JSONType = dict[str, Any] | list[Any] | str | int | float | bool | None
 
-def deep_sort(obj: dict | list | Any) -> dict | list | Any:
+def deep_sort(obj: JSONType) -> JSONType:
     if isinstance(obj, dict):
         return {k: deep_sort(obj[k]) for k in sorted(obj)}
     elif isinstance(obj, list):

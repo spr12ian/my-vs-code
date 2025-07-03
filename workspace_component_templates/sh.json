@@ -3,16 +3,15 @@
     "[shellscript]": {
       "editor.defaultFormatter": "foxundermoon.shell-format",
       "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
       "editor.tabSize": 2
     }
   },
   "extensions": {
     "recommendations": [
       "aaron-bond.better-comments",
-      "editorconfig.editorconfig",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
-      "streetsidesoftware.code-spell-checker",
       "timonwong.shellcheck"
     ]
   }

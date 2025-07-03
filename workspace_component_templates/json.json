@@ -1,16 +1,18 @@
 {
   "settings": {
     "[json]": {
-      "editor.tabSize": 2,
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
     }
   },
   "extensions": {
     "recommendations": [
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
-      "usernamehw.errorlens"
+      "usernamehw.errorlens",
+      "vscode.json-language-features"
     ]
   }
 }

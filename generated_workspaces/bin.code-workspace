@@ -4,7 +4,6 @@
       "aaron-bond.better-comments",
       "eamodio.gitlens",
       "editorconfig.editorconfig",
-      "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
       "ms-vscode-remote.remote-wsl",
@@ -25,11 +24,27 @@
       "editor.tabSize": 2
     },
     "cSpell.language": "en-GB",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
     "files.exclude": {
-      "**/.git": true
+      "**/.git": true,
+      "**/.gitmodules": true
     },
-    "git.autoRepositoryDetection": true,
+    "git.autoRepositoryDetection": "openEditors",
     "git.detectSubmodules": false,
+    "gitlens.blame.highlight.enabled": true,
+    "gitlens.blame.highlight.locations": [
+      "gutter"
+    ],
+    "gitlens.codeLens.authors.enabled": true,
+    "gitlens.codeLens.enabled": true,
+    "gitlens.codeLens.recentChange.enabled": true,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm",
+    "gitlens.defaultTimeFormat": "HH:mm",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": true,
+    "gitlens.views.repositories.files.layout": "tree",
     "terminal.integrated.defaultProfile.linux": "bash"
   }
 }
