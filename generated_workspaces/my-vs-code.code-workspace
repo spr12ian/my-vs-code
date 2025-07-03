@@ -70,6 +70,10 @@
       "**/*.hatch": true,
       "**/*.mypy_cache": true,
       "**/*.pyc": true,
+      "**/*.pytest_cache": true,
+      "**/*.ruff": true,
+      "**/*.venv": true,
+      "**/*venv": true,
       "**/.git": true,
       "**/__pycache__": true
     },

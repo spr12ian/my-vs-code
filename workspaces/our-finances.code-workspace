@@ -5,6 +5,14 @@
     }
   ],
   "settings": {
+    "files.exclude": {
+      "**/*.hatch": true,
+      "**/*.mypy_cache": true,
+      "**/*.pyc": true,
+      "**/.git": true,
+      "**/__pycache__": true,
+      "**/node_modules": true
+    },
     "git.detectSubmodules": false,
     "git.autoRepositoryDetection": true,
     "python.analysis.autoSearchPaths": true,

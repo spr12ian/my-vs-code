@@ -1,10 +1,25 @@
 {
   "settings": {
     "files.exclude": {
-      "**/.git": true
+      "**/.git": true,
+      "**/.gitmodules": true
+
     },
-    "git.autoRepositoryDetection": true,
-    "git.detectSubmodules": false
+    "git.autoRepositoryDetection": "openEditors",
+    "git.detectSubmodules": false,
+    "gitlens.blame.highlight.enabled": true,
+    "gitlens.blame.highlight.locations": [
+      "gutter"
+    ],
+    "gitlens.codeLens.authors.enabled": true,
+    "gitlens.codeLens.enabled": true,
+    "gitlens.codeLens.recentChange.enabled": true,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm",
+    "gitlens.defaultTimeFormat": "HH:mm",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": true,
+    "gitlens.views.repositories.files.layout": "tree"
   },
   "extensions": {
     "recommendations": ["eamodio.gitlens"]

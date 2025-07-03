@@ -3,28 +3,19 @@
     "[html]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true,
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
     },
-    "html.format.wrapLineLength": 88,
     "html.format.indentInnerHtml": true,
-    "files.encoding": "utf8",
-    "files.eol": "\n",
-    "files.exclude": {
-      "**/.git": true,
-      "**/node_modules": true
-    },
-    "git.autoRepositoryDetection": true,
-    "git.detectSubmodules": false
+    "html.format.wrapLineLength": 88
   },
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "ecmel.vscode-html-css",
-    "xabikos.javascriptsnippets",
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "streetsidesoftware.code-spell-checker",
-    "davidanson.vscode-markdownlint",
-    "w3cschool.htmlhint"
-  ]
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "w3cschool.htmlhint",
+      "xabikos.javascriptsnippets"
+    ]
+  }
 }

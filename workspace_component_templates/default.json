@@ -1,12 +1,13 @@
 {
   "settings": {
     "cSpell.language": "en-GB",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
     "recommendations": [
       "ms-vscode-remote.remote-wsl",
-      "esbenp.prettier-vscode",
       "streetsidesoftware.code-spell-checker"
     ]
   }

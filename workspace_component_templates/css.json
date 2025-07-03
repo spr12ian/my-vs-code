@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ecmel.vscode-html-css",
+      "esbenp.prettier-vscode",
+      "stylelint.vscode-stylelint",
+      "xabikos.javascriptsnippets"
+    ]
+  }
+}

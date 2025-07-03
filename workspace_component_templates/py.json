@@ -1,9 +1,13 @@
 {
   "settings": {
     "files.exclude": {
-      "**/*.hatch": true,
-      "**/*.mypy_cache": true,
       "**/*.pyc": true,
+      "**/.hatch": true,
+      "**/.mypy_cache": true,
+      "**/.pytest_cache": true,
+      "**/.ruff_cache": true,
+      "**/.venv": true,
+      "**/venv": true,
       "**/__pycache__": true
     },
     "[python]": {
@@ -17,10 +21,10 @@
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": false,
-    "python.linting.lintOnSave": true,
     "python.linting.mypyArgs": ["--ignore-missing-imports", "--strict"],
     "python.linting.mypyEnabled": true,
     "python.linting.pylintEnabled": false,
+    "python.linting.ruffArgs": ["--config=pyproject.toml"],
     "python.linting.ruffEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false
@@ -30,7 +34,6 @@
       "charliermarsh.ruff",
       "ms-python.python",
       "ms-python.vscode-pylance",
-      "ms-vscode.debugpy",
       "tamasfe.even-better-toml"
     ]
   }
