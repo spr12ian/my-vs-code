@@ -10,13 +10,10 @@
       "editor.formatOnSave": true,
       "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
-    "editor.detectIndentation": false,
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "editor.detectIndentation": false
   },
   "extensions": {
     "recommendations": [
-      "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "usernamehw.errorlens"
     ]

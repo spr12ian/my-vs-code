@@ -36,7 +36,7 @@
       "**/.git": true,
       "**/node_modules": true
     },
-    "git.autoRepositoryDetection": true,
+    "git.autoRepositoryDetection": "openEditors",
     "git.detectSubmodules": false,
     "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 88,

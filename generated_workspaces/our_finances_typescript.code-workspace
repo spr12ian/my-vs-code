@@ -2,6 +2,7 @@
   "extensions": {
     "recommendations": [
       "christian-kohler.path-intellisense",
+      "davidanson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "eamodio.gitlens",
       "esbenp.prettier-vscode",
@@ -12,6 +13,8 @@
       "streetsidesoftware.code-spell-checker",
       "usernamehw.errorlens",
       "usernamehw.errorlense",
+      "vscode.json-language-features",
+      "xabikos.javascriptsnippets",
       "yzhang.markdown-all-in-one"
     ]
   },
@@ -21,10 +24,24 @@
     }
   ],
   "settings": {
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2
+    },
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
       "editor.tabSize": 2
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.wordWrap": "on"
     },
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -54,6 +71,8 @@
     "files.exclude": {
       "**/.git": true,
       "**/.gitmodules": true,
+      "**/build": true,
+      "**/dist": true,
       "**/node_modules": true
     },
     "files.insertFinalNewline": true,

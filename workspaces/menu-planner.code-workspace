@@ -28,7 +28,7 @@
       "**/.git": true,
       "**/node_modules": true
     },
-    "git.autoRepositoryDetection": true,
+    "git.autoRepositoryDetection": "openEditors",
     "git.detectSubmodules": false,
     "terminal.integrated.defaultProfile.linux": "bash"
   }

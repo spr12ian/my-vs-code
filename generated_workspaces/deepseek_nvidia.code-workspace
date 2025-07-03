@@ -2,6 +2,7 @@
   "extensions": {
     "recommendations": [
       "charliermarsh.ruff",
+      "davidanson.vscode-markdownlint",
       "eamodio.gitlens",
       "esbenp.prettier-vscode",
       "jsoncrack.vscode-jsoncrack",
@@ -11,6 +12,7 @@
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "usernamehw.errorlens",
+      "vscode.json-language-features",
       "yzhang.markdown-all-in-one"
     ]
   },
@@ -23,10 +25,20 @@
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
       "editor.tabSize": 2
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.wordWrap": "on"
     },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": true,
+      "editor.insertSpaces": true,
       "editor.tabSize": 4
     },
     "[toml]": {

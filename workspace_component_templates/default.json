@@ -3,6 +3,8 @@
     "cSpell.language": "en-GB",
     "files.encoding": "utf8",
     "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
