@@ -18,7 +18,6 @@
       "**/.git": true
     },
     "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": "openEditors",
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {

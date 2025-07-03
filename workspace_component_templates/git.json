@@ -5,7 +5,6 @@
       "**/.gitmodules": true
 
     },
-    "git.autoRepositoryDetection": "openEditors",
     "git.detectSubmodules": false,
     "gitlens.blame.highlight.enabled": true,
     "gitlens.blame.highlight.locations": [

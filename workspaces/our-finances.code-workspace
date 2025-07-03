@@ -14,7 +14,6 @@
       "**/node_modules": true
     },
     "git.detectSubmodules": false,
-    "git.autoRepositoryDetection": "openEditors",
     "python.analysis.autoSearchPaths": true,
     "python.analysis.useLibraryCodeForTypes": true,
     "python.formatting.provider": "none",
