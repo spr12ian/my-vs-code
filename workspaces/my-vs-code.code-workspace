@@ -100,12 +100,14 @@
     ],
     "editor.detectIndentation": false,
     "files.associations": {
+      "*.log": "log",
       "*.toml": "toml"
     },
     "files.exclude": {
       "**/*.hatch": true,
       "**/*.mypy_cache": true,
       "**/*.pyc": true,
+      "**/.git": true,
       "**/__pycache__": true
     },
     "files.insertFinalNewline": true,

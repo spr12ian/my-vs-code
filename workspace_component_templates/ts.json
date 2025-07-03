@@ -1,9 +1,5 @@
 {
   "settings": {
-    "files.associations": {
-      "*.ts": "typescript",
-      "*.tsx": "typescriptreact"
-    },
     "[typescript]": {
       "editor.tabSize": 2,
       "editor.insertSpaces": true,
@@ -18,15 +14,22 @@
       "editor.formatOnSave": true,
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll.eslint": true
     },
-    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.associations": {
+      "*.ts": "typescript",
+      "*.tsx": "typescriptreact"
+    },
+    "files.exclude": {
+      "**/node_modules": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "typescript.preferences.quoteStyle": "single",
     "typescript.suggest.completeFunctionCalls": true,
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.updateImportsOnFileMove.enabled": "always"
   },
   "extensions": {
     "recommendations": [

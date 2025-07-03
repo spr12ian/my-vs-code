@@ -12,7 +12,6 @@
     "files.eol": "\n",
     "files.exclude": {
       "**/.git": true,
-      "**/.DS_Store": true,
       "**/node_modules": true
     },
     "git.autoRepositoryDetection": true,

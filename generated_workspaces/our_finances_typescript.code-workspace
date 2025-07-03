@@ -50,7 +50,8 @@
       "*.tsx": "typescriptreact"
     },
     "files.exclude": {
-      "**/.git": true
+      "**/.git": true,
+      "**/node_modules": true
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,

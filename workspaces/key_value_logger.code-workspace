@@ -33,7 +33,6 @@
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.exclude": {
-      "**/.DS_Store": true,
       "**/.git": true,
       "**/node_modules": true
     },

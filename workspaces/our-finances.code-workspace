@@ -28,11 +28,30 @@
   },
   "extensions": {
     "recommendations": [
+      "aaron-bond.better-comments",
       "charliermarsh.ruff",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "emilast.LogFileHighlighter",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "jsoncrack.vscode-jsoncrack",
+      "mads-hartmann.bash-ide-vscode",
+      "martinring.yaml-path",
       "ms-python.python",
       "ms-python.vscode-pylance",
+      "ms-vscode-remote.remote-wsl",
       "ms-vscode.debugpy",
-      "tamasfe.even-better-toml"
+      "mtxr.sqltools",
+      "mtxr.sqltools-driver-sqlite",
+      "oouo-diogo-perdigao.docthis",
+      "redhat.vscode-yaml",
+      "streetsidesoftware.code-spell-checker",
+      "tamasfe.even-better-toml",
+      "timonwong.shellcheck",
+      "usernamehw.errorlens",
+      "yzhang.markdown-all-in-one"
     ]
   }
 }

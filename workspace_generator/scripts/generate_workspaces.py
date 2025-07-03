@@ -1,10 +1,19 @@
 import json
 import os
 from pathlib import Path
+from typing import Any, cast
 
 from utils import deep_sort, get_projects
 
-IGNORE_LIST = [".git", ".hg", ".mypy_cache", ".svn", "__pycache__", "venv"]
+IGNORE_LIST = [
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".svn",
+    "__pycache__",
+    "node_modules",
+    "venv",
+]
 
 
 class Tree:
@@ -42,6 +51,28 @@ class Tree:
                 self.walk(entry)
 
 
+
+def deep_merge_dict(a: dict[str, Any], b: dict[str, Any], path: str = "") -> dict[str, Any]:
+    for key, b_value in b.items():
+        current_path = f"{path}.{key}" if path else key
+        if key in a:
+            a_value = a[key]
+            if isinstance(a_value, dict) and isinstance(b_value, dict):
+                # Tell the type checker: these *are* dict[str, Any]
+                a[key] = deep_merge_dict(
+                    cast(dict[str, Any], a_value),
+                    cast(dict[str, Any], b_value),
+                    current_path
+                )
+            elif a_value != b_value:
+                print(f"⚠️ Clash at '{current_path}': '{a_value}' will be overwritten by '{b_value}'")
+                a[key] = b_value
+            else:
+                a[key] = b_value
+        else:
+            a[key] = b_value
+    return a
+
 def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
     Generates a vscode workspace file (template).
@@ -71,9 +102,11 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
                     if "folders" in template_data:
                         json_data["folders"].extend(template_data["folders"])
                     if "settings" in template_data:
-                        json_data.setdefault("settings", {}).update(
-                            template_data["settings"]
+                        json_data.setdefault("settings", {})
+                        deep_merge_dict(
+                            json_data["settings"], template_data["settings"]
                         )
+
                     if "extensions" in template_data:
                         json_data.setdefault("extensions", {}).setdefault(
                             "recommendations", []
