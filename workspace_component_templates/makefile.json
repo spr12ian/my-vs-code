@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "[makefile]": {
+      "editor.insertSpaces": false,
+      "editor.renderWhitespace": "all",
+      "editor.tabSize": 4
+    },
+    "makefile.configurations": [
+      {
+        "name": "Default",
+        "makeArgs": []
+      }
+    ],
+    "makefile.launchConfigurations": [
+      {
+        "cwd": "${workspaceFolder}/bin",
+        "binaryPath": "${workspaceFolder}/bin/myExecutable",
+        "binaryArgs": []
+      }
+    ],
+    "makefile.makePath": "/usr/bin/make",
+    "makefile.makefilePath": "${workspaceFolder}/Makefile",
+    "makefile.loggingLevel": "Normal"
+  },
+  "extensions": {
+    "recommendations": ["ms-vscode.makefile-tools"]
+  }
+}

@@ -17,24 +17,24 @@ IGNORE_LIST = [
 
 
 class Tree:
-    def __init__(self, initial_file_suffixes: dict[str,int]={}) -> None:
+    def __init__(self, initial_components: set[str]=set()) -> None:
         self.ignoreList: list[str] = []
-        self.file_suffixes: dict[str, int] = initial_file_suffixes
+        self.components: set[str] = initial_components
 
-    def get_suffixes(self, directory: Path) -> dict[str, int]:
+    def get_components(self, directory: Path) -> set[str]:
         """
-        Returns a dictionary of file suffixes and their counts.
+        Returns a set of components.
         """
         self.walk(directory)
-        return self.file_suffixes
+        return self.components
 
     def ignore(self, patterns: list[str]) -> None:
         self.ignoreList.extend(patterns)
 
     def register(self, path: Path) -> None:
         if not path.is_dir():
-            suffix = path.suffix.lower() if path.suffix else ".default"
-            self.file_suffixes[suffix] = self.file_suffixes.get(suffix, 0) + 1
+            suffix = path.suffix.lower() if path.suffix else "._default"
+            self.components.add(suffix)
 
     def walk(self, directory: Path) -> None:
         entries = sorted(
@@ -111,14 +111,16 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
         base_path (Path): The base path where the workspace will be created.
     """
     workspace_path = base_path / (workspace_name + ".code-workspace")
+    print(workspace_path)
 
     json_data: dict[str, Any] = {"folders": [{"path": f"../../{workspace_name}"}]}
 
-    workspace_suffixes = get_workspace_suffixes(workspace_name)
+    workspace_components = get_workspace_components(workspace_name)
+    print(workspace_components)
 
-    for suffix in sorted(workspace_suffixes):
+    for component in sorted(workspace_components):
         component_template = Path(
-            f"workspace_component_templates/{suffix[1:]}.json"
+            f"workspace_component_templates/{component[1:]}.json"
         )
         if component_template.exists():
             with open(component_template, "r") as template_file:
@@ -147,16 +149,29 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
             sorted(set(json_data["extensions"]["recommendations"]))
         )
 
-    sorted_data = deep_sort(json_data)
+    # Build final structure in required order
+    final_json_data: dict[str, Any] = {}
 
-    data = json.dumps(sorted_data, indent=2)
-    # Ensure final newline
-    data += "\n"
+    if "folders" in json_data:
+        final_json_data["folders"] = sorted(
+            json_data["folders"], key=lambda f: f["path"]
+        )
+
+    if "settings" in json_data:
+        final_json_data["settings"] = deep_sort(json_data["settings"])
+
+    if "extensions" in json_data:
+        final_json_data["extensions"] = {
+            "recommendations": sorted(json_data["extensions"]["recommendations"])
+        }
+
+    data = json.dumps(final_json_data, indent=2) + "\n"
+
 
     write_workspace_file(workspace_path, data)
 
 
-def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
+def get_workspace_components(workspace_name: str) -> set[str]:
     github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
     if github_parent_dir is None:
         raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
@@ -169,13 +184,13 @@ def get_workspace_suffixes(workspace_name: str) -> dict[str, int]:
 
     project_dir = projects_dir / workspace_name
 
-    initial_file_suffixes: dict[str, int] = {".git": 1}
+    initial_components: set[str] = {".git", ".makefile"}
     if detect_hugo_repo(project_dir):
-        initial_file_suffixes[".hugo"] = 1
+        initial_components.add(".hugo")
 
-    tree = Tree(initial_file_suffixes)
+    tree = Tree(initial_components)
     tree.ignore(IGNORE_LIST)
-    return tree.get_suffixes(project_dir)
+    return tree.get_components(project_dir)
 
 
 def write_workspace_file(workspace_path: Path, data: str) -> None:

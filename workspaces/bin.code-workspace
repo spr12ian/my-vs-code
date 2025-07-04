@@ -1,36 +1,21 @@
 {
-  "extensions": {
-    "recommendations": [
-      "aaron-bond.better-comments",
-      "davidanson.vscode-markdownlint",
-      "eamodio.gitlens",
-      "esbenp.prettier-vscode",
-      "foxundermoon.shell-format",
-      "mads-hartmann.bash-ide-vscode",
-      "ms-vscode-remote.remote-wsl",
-      "streetsidesoftware.code-spell-checker",
-      "timonwong.shellcheck",
-      "yzhang.markdown-all-in-one"
-    ]
-  },
   "folders": [
     {
       "path": "../../bin"
     }
   ],
   "settings": {
+    "[makefile]": {
+      "editor.insertSpaces": false,
+      "editor.renderWhitespace": "all",
+      "editor.tabSize": 4
+    },
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2,
       "editor.wordWrap": "on"
     },
     "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true,
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "cSpell.language": "en-GB",
     "cSpell.words": [
@@ -47,6 +32,10 @@
       "whatis",
       "writable"
     ],
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
     "files.associations": {
       "*.sh": "shellscript"
     },
@@ -77,5 +66,20 @@
     ],
     "shellcheck.enable": true,
     "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": {
+    "recommendations": [
+      "aaron-bond.better-comments",
+      "davidanson.vscode-markdownlint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "foxundermoon.shell-format",
+      "mads-hartmann.bash-ide-vscode",
+      "ms-vscode-remote.remote-wsl",
+      "ms-vscode.makefile-tools",
+      "streetsidesoftware.code-spell-checker",
+      "timonwong.shellcheck",
+      "yzhang.markdown-all-in-one"
+    ]
   }
 }

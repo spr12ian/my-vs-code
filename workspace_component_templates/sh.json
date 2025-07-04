@@ -1,10 +1,7 @@
 {
   "settings": {
     "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true,
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "files.associations": {
       "*.sh": "shellscript"

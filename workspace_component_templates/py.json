@@ -12,8 +12,6 @@
     },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
-      "editor.formatOnSave": true,
-      "editor.insertSpaces": true,
       "editor.tabSize": 4
     },
     "python.analysis.autoImportCompletions": true,

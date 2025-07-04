@@ -5,12 +5,8 @@
     },
     "[toml]": {
       "editor.wordWrap": "off",
-      "editor.tabSize": 2,
-      "editor.insertSpaces": true,
-      "editor.formatOnSave": true,
       "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
-    "editor.detectIndentation": false
+    }
   },
   "extensions": {
     "recommendations": [
