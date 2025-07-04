@@ -4,4 +4,4 @@ depend on the files / file suffixes found in the project
 
 The default component (_default.json) will be included for every workspace
 
-Every workspace should have a README.md and a Makefile as well as a .git directory
+Every workspace should have a README.md and a .git directory

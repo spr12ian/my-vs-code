@@ -101,7 +101,16 @@ def detect_hugo_repo(path: Path) -> bool:
 
     return has_config and has_content and has_layouts and has_themes
 
+def detect_makefile(path: Path) -> bool:
+    """
+    Detects whether a given directory contains a Makefile.
+    """
+    if not path.is_dir():
+        return False
 
+    has_makefile = (path / "Makefile").is_file()
+    return has_makefile
+   
 def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
     Generates a vscode workspace file (template).
@@ -184,9 +193,11 @@ def get_workspace_components(workspace_name: str) -> set[str]:
 
     project_dir = projects_dir / workspace_name
 
-    initial_components: set[str] = {".git", ".makefile"}
+    initial_components: set[str] = {".git"}
     if detect_hugo_repo(project_dir):
         initial_components.add(".hugo")
+    if detect_makefile(project_dir):
+        initial_components.add(".makefile")
 
     tree = Tree(initial_components)
     tree.ignore(IGNORE_LIST)
