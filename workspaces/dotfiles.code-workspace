@@ -5,10 +5,12 @@
     }
   ],
   "settings": {
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.wordWrap": "on"
+    },
     "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "cSpell.language": "en-GB",
     "cSpell.words": [
@@ -23,8 +25,8 @@
   "extensions": {
     "recommendations": [
       "aaron-bond.better-comments",
+      "davidanson.vscode-markdownlint",
       "eamodio.gitlens",
-      "editorconfig.editorconfig",
       "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "mads-hartmann.bash-ide-vscode",
