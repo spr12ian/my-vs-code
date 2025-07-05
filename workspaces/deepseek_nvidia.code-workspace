@@ -5,9 +5,6 @@
     }
   ],
   "settings": {
-    "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "[makefile]": {
       "editor.insertSpaces": false,
       "editor.renderWhitespace": "all",
@@ -51,9 +48,7 @@
     "files.trimTrailingWhitespace": true,
     "git.detectSubmodules": false,
     "gitlens.blame.highlight.enabled": true,
-    "gitlens.blame.highlight.locations": [
-      "gutter"
-    ],
+    "gitlens.blame.highlight.locations": ["gutter"],
     "gitlens.codeLens.authors.enabled": true,
     "gitlens.codeLens.enabled": true,
     "gitlens.codeLens.recentChange.enabled": true,
@@ -86,21 +81,20 @@
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": false,
-    "python.linting.mypyArgs": [
-      "--ignore-missing-imports",
-      "--strict"
-    ],
+    "python.linting.mypyArgs": ["--ignore-missing-imports", "--strict"],
     "python.linting.mypyEnabled": true,
     "python.linting.pylintEnabled": false,
-    "python.linting.ruffArgs": [
-      "--config=pyproject.toml"
-    ],
+    "python.linting.ruffArgs": ["--config=pyproject.toml"],
     "python.linting.ruffEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "terminal.integrated.defaultProfile.linux": "bash",
     "cSpell.words": [
-      "cleanup"
+      "cleanup",
+      "deepseek",
+      "mypy",
+      "pytest",
+      "setuptools"
     ]
   },
   "extensions": {
@@ -109,7 +103,6 @@
       "davidanson.vscode-markdownlint",
       "eamodio.gitlens",
       "esbenp.prettier-vscode",
-      "jsoncrack.vscode-jsoncrack",
       "ms-python.python",
       "ms-python.vscode-pylance",
       "ms-vscode-remote.remote-wsl",
@@ -117,7 +110,6 @@
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "usernamehw.errorlens",
-      "vscode.json-language-features",
       "yzhang.markdown-all-in-one"
     ]
   }
