@@ -16,10 +16,39 @@
     "cSpell.words": [
       "customisation"
     ],
-    "files.exclude": {
-      "**/.git": true
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "files.associations": {
+      "*.sh": "shellscript"
     },
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.gitmodules": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "git.detectSubmodules": false,
+    "gitlens.blame.highlight.enabled": true,
+    "gitlens.blame.highlight.locations": [
+      "gutter"
+    ],
+    "gitlens.codeLens.authors.enabled": true,
+    "gitlens.codeLens.enabled": true,
+    "gitlens.codeLens.recentChange.enabled": true,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm",
+    "gitlens.defaultTimeFormat": "HH:mm",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": true,
+    "gitlens.views.repositories.files.layout": "tree",
+    "shellcheck.customArgs": [
+      "--severity=style"
+    ],
+    "shellcheck.enable": true,
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
