@@ -1,17 +1,4 @@
 {
-  "extensions": {
-    "recommendations": [
-      "dbaeumer.vscode-eslint",
-      "eamodio.gitlens",
-      "esbenp.prettier-vscode",
-      "jsoncrack.vscode-jsoncrack",
-      "ms-vscode-remote.remote-wsl",
-      "oouo-diogo-perdigao.docthis",
-      "streetsidesoftware.code-spell-checker",
-      "usernamehw.errorlens",
-      "yzhang.markdown-all-in-one"
-    ]
-  },
   "folders": [
     {
       "path": "../../key_value_logger"
@@ -19,26 +6,69 @@
   ],
   "settings": {
     "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2
+      "editor.wordWrap": "on"
     },
     "cSpell.language": "en-GB",
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.exclude": {
       "**/.git": true,
+      "**/.gitmodules": true,
+      "**/build": true,
+      "**/dist": true,
       "**/node_modules": true
     },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "git.detectSubmodules": false,
+    "gitlens.blame.highlight.enabled": true,
+    "gitlens.blame.highlight.locations": [
+      "gutter"
+    ],
+    "gitlens.codeLens.authors.enabled": true,
+    "gitlens.codeLens.enabled": true,
+    "gitlens.codeLens.recentChange.enabled": true,
+    "gitlens.currentLine.enabled": true,
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm",
+    "gitlens.defaultTimeFormat": "HH:mm",
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.hovers.enabled": true,
+    "gitlens.views.repositories.files.layout": "tree",
     "html.format.indentInnerHtml": true,
     "html.format.wrapLineLength": 88,
     "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": {
+    "recommendations": [
+      "davidanson.vscode-markdownlint",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "jsoncrack.vscode-jsoncrack",
+      "ms-vscode-remote.remote-wsl",
+      "oouo-diogo-perdigao.docthis",
+      "streetsidesoftware.code-spell-checker",
+      "usernamehw.errorlens",
+      "vscode.json-language-features",
+      "w3cschool.htmlhint",
+      "xabikos.javascriptsnippets",
+      "yzhang.markdown-all-in-one"
+    ]
   }
 }
