@@ -2,7 +2,6 @@
 
 extensions = [
 "aaron-bond.better-comments",
-"editorconfig.editorconfig",
 "eamodio.gitlens",
 "foxundermoon.shell-format",
 "mads-hartmann.bash-ide-vscode",
