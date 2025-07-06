@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "path": "../../bin"
+      "path": "../../family_tree"
     }
   ],
   "settings": {
@@ -9,37 +9,35 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
-    "[shellscript]": {
-      "editor.defaultFormatter": "foxundermoon.shell-format"
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.tabSize": 4
+    },
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
+      "editor.wordWrap": "off"
     },
     "cSpell.language": "en-GB",
-    "cSpell.words": [
-      "chromeos",
-      "dpkg",
-      "githubcli",
-      "graphviz",
-      "moreutils",
-      "nullglob",
-      "pipx",
-      "poppler",
-      "shellcheck",
-      "tesseract",
-      "vcode",
-      "whatis",
-      "writable"
-    ],
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "files.associations": {
-      "*.sh": "shellscript"
+      "*.toml": "toml"
     },
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.exclude": {
+      "**/*.pyc": true,
       "**/.git": true,
-      "**/.gitmodules": true
+      "**/.gitmodules": true,
+      "**/.hatch": true,
+      "**/.mypy_cache": true,
+      "**/.pytest_cache": true,
+      "**/.ruff_cache": true,
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/venv": true
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
@@ -57,23 +55,39 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": true,
     "gitlens.views.repositories.files.layout": "tree",
-    "shellcheck.customArgs": [
-      "--severity=style"
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.formatting.provider": "none",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyArgs": [
+      "--ignore-missing-imports",
+      "--strict"
     ],
-    "shellcheck.enable": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.ruffArgs": [
+      "--config=pyproject.toml"
+    ],
+    "python.linting.ruffEnabled": true,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
     "recommendations": [
-      "aaron-bond.better-comments",
+      "charliermarsh.ruff",
       "davidanson.vscode-markdownlint",
       "eamodio.gitlens",
       "esbenp.prettier-vscode",
-      "foxundermoon.shell-format",
-      "mads-hartmann.bash-ide-vscode",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
       "ms-vscode-remote.remote-wsl",
       "streetsidesoftware.code-spell-checker",
-      "timonwong.shellcheck",
+      "tamasfe.even-better-toml",
+      "usernamehw.errorlens",
       "yzhang.markdown-all-in-one"
     ]
   }
