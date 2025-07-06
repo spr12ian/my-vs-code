@@ -1,27 +1,15 @@
 {
-  "extensions": {
-    "recommendations": [
-      "dbaeumer.vscode-eslint",
-      "eamodio.gitlens",
-      "esbenp.prettier-vscode",
-      "jsoncrack.vscode-jsoncrack",
-      "ms-vscode-remote.remote-wsl",
-      "oouo-diogo-perdigao.docthis",
-      "streetsidesoftware.code-spell-checker",
-      "usernamehw.errorlens",
-      "yzhang.markdown-all-in-one"
-    ]
-  },
   "folders": [
     {
       "path": "../../menu-planner"
     }
   ],
   "settings": {
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.tabSize": 2
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.language": "en-GB",
     "files.exclude": {
@@ -30,5 +18,21 @@
     },
     "git.detectSubmodules": false,
     "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": {
+    "recommendations": [
+      "davidanson.vscode-markdownlint",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "esbenp.prettier-vscode",
+      "jsoncrack.vscode-jsoncrack",
+      "ms-vscode-remote.remote-wsl",
+      "oouo-diogo-perdigao.docthis",
+      "streetsidesoftware.code-spell-checker",
+      "usernamehw.errorlens",
+      "vscode.json-language-features",
+      "xabikos.javascriptsnippets",
+      "yzhang.markdown-all-in-one"
+    ]
   }
 }

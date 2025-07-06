@@ -42,7 +42,7 @@ def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     Recursively detect conflicts between two JSON-like structures.
     Returns a list of conflict descriptions, pretty-printed.
     """
-    conflicts = []
+    conflicts: list[str] = []
 
     IGNORED_PATHS = {"settings.cSpell.words"}
 
