@@ -20,13 +20,14 @@
     },
     "[toml]": {
       "editor.defaultFormatter": "tamasfe.even-better-toml",
-      "editor.wordWrap": "off"
+      "editor.wordWrap": "on"
     },
     "cSpell.language": "en-GB",
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
+    "editor.wordWrap": "off",
     "files.associations": {
       "*.toml": "toml"
     },

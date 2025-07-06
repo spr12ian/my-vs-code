@@ -4,7 +4,6 @@
       "*.sql": "sql"
     },
     "[sql]": {
-      "editor.wordWrap": "off",
       "editor.tabSize": 4,
       "editor.defaultFormatter": "mtxr.sqltools"
     }

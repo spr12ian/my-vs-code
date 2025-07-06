@@ -5,8 +5,8 @@
       "*.yml": "yaml"
     },
     "[yaml]": {
-      "editor.wordWrap": "on",
-      "editor.defaultFormatter": "redhat.vscode-yaml"
+      "editor.defaultFormatter": "redhat.vscode-yaml",
+      "editor.wordWrap": "on"
     }
   },
   "extensions": {

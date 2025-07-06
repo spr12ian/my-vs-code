@@ -4,8 +4,8 @@
       "*.toml": "toml"
     },
     "[toml]": {
-      "editor.wordWrap": "off",
-      "editor.defaultFormatter": "tamasfe.even-better-toml"
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
+      "editor.wordWrap": "on"
     }
   },
   "extensions": {
