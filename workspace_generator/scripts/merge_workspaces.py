@@ -75,7 +75,7 @@ def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     return conflicts
 
 
-def load_workspace(path: Path) -> dict:
+def load_workspace(path: Path) -> dict[str, Any]:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
