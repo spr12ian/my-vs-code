@@ -77,7 +77,10 @@
     "terminal.integrated.defaultProfile.linux": "bash",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.suggest.completeFunctionCalls": true,
-    "typescript.preferences.quoteStyle": "single"
+    "typescript.preferences.quoteStyle": "single",
+    "cSpell.words": [
+      "CPTY"
+    ]
   },
   "extensions": {
     "recommendations": [
