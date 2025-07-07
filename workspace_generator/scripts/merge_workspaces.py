@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 from typing import Any, Callable, cast
 
-from utils import deep_sort, get_projects
+from utils import get_projects, write_final_structure
 
 
 def compare_lists(path: str, a: list, b: list) -> list[str]:
@@ -140,7 +140,7 @@ def merge_workspaces(ws1: dict, ws2: dict) -> dict:
     rec2 = ws2.get("extensions", {}).get("recommendations", [])
     merged["extensions"] = {"recommendations": sorted(set(rec1 + rec2))}
 
-    return cast(dict[Any, Any], deep_sort(merged))
+    return cast(dict[Any, Any], _deep_sort(merged))
 
 
 projects = get_projects()

@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from typing import Any, cast
 
-from utils import deep_sort, get_projects
+from utils import get_projects, write_final_structure, WorkspaceJSON
 
 IGNORE_LIST = [
     ".git",
@@ -17,7 +17,7 @@ IGNORE_LIST = [
 
 
 class Tree:
-    def __init__(self, initial_components: set[str]=set()) -> None:
+    def __init__(self, initial_components: set[str] = set()) -> None:
         self.ignoreList: list[str] = []
         self.components: set[str] = initial_components
 
@@ -101,6 +101,7 @@ def detect_hugo_repo(path: Path) -> bool:
 
     return has_config and has_content and has_layouts and has_themes
 
+
 def detect_makefile(path: Path) -> bool:
     """
     Detects whether a given directory contains a Makefile.
@@ -110,7 +111,8 @@ def detect_makefile(path: Path) -> bool:
 
     has_makefile = (path / "Makefile").is_file()
     return has_makefile
-   
+
+
 def generate_workspace(workspace_name: str, base_path: Path) -> None:
     """
     Generates a vscode workspace file (template).
@@ -122,15 +124,13 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
     workspace_path = base_path / (workspace_name + ".code-workspace")
     print(workspace_path)
 
-    json_data: dict[str, Any] = {"folders": [{"path": f"../../{workspace_name}"}]}
+    json_data: WorkspaceJSON = {"folders": [{"path": f"../../{workspace_name}"}]}
 
     workspace_components = get_workspace_components(workspace_name)
     print(workspace_components)
 
     for component in sorted(workspace_components):
-        component_template = Path(
-            f"workspace_component_templates/{component[1:]}.json"
-        )
+        component_template = Path(f"workspace_component_templates/{component[1:]}.json")
         if component_template.exists():
             with open(component_template, "r") as template_file:
                 try:
@@ -141,16 +141,24 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
                 if "folders" in template_data:
                     json_data["folders"].extend(template_data["folders"])
                 if "settings" in template_data:
-                    json_data.setdefault("settings", {})
+                    if "settings" not in json_data:
+                        json_data["settings"] = {}
+
                     if isinstance(template_data["settings"], dict):
                         deep_merge_dict(
-                            json_data["settings"], template_data["settings"]
+                            cast(dict[str, Any], json_data["settings"]),
+                            template_data["settings"]
                         )
-
                 if "extensions" in template_data:
-                    json_data.setdefault("extensions", {}).setdefault(
-                        "recommendations", []
-                    ).extend(template_data["extensions"]["recommendations"])
+                    if "extensions" not in json_data:
+                        json_data["extensions"] = {"recommendations": []}
+                    elif "recommendations" not in json_data["extensions"]:
+                        json_data["extensions"]["recommendations"] = []
+
+                    json_data["extensions"]["recommendations"].extend(
+                        template_data["extensions"]["recommendations"]
+                    )
+
 
     # Deduplicate recommendations if they exist
     if "extensions" in json_data and "recommendations" in json_data["extensions"]:
@@ -158,26 +166,7 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
             sorted(set(json_data["extensions"]["recommendations"]))
         )
 
-    # Build final structure in required order
-    final_json_data: dict[str, Any] = {}
-
-    if "folders" in json_data:
-        final_json_data["folders"] = sorted(
-            json_data["folders"], key=lambda f: f["path"]
-        )
-
-    if "settings" in json_data:
-        final_json_data["settings"] = deep_sort(json_data["settings"])
-
-    if "extensions" in json_data:
-        final_json_data["extensions"] = {
-            "recommendations": sorted(json_data["extensions"]["recommendations"])
-        }
-
-    data = json.dumps(final_json_data, indent=2) + "\n"
-
-
-    write_workspace_file(workspace_path, data)
+    write_final_structure(workspace_path, json_data)
 
 
 def get_workspace_components(workspace_name: str) -> set[str]:
@@ -202,16 +191,6 @@ def get_workspace_components(workspace_name: str) -> set[str]:
     tree = Tree(initial_components)
     tree.ignore(IGNORE_LIST)
     return tree.get_components(project_dir)
-
-
-def write_workspace_file(workspace_path: Path, data: str) -> None:
-    # Ensure output directory exists
-    workspace_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with open(workspace_path, "w") as workspace_file:
-        workspace_file.write(data)
-
-    print(f"Workspace created: '{workspace_path}'")
 
 
 if __name__ == "__main__":
