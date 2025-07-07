@@ -1,12 +1,12 @@
 import json
 import sys
 from pathlib import Path
-from typing import Any, Callable, cast
+from typing import Any, Callable
 
-from utils import get_projects, write_final_structure
+from utils import get_projects, write_final_structure, WorkspaceJSON
 
 
-def compare_lists(path: str, a: list, b: list) -> list[str]:
+def compare_lists(path: str, a: list[Any], b: list[Any]) -> list[str]:
     """
     Compare two lists, showing added and removed elements cleanly.
     Handles lists of scalars; falls back to full comparison for lists of dicts.
@@ -75,15 +75,15 @@ def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     return conflicts
 
 
-def load_workspace(path: Path) -> dict[str, Any]:
+def load_workspace(path: Path) -> WorkspaceJSON:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
 def merge_project(
     project: str,
-    load_workspace: Callable[[Path], dict],
-    merge_workspaces: Callable[[dict, dict], dict],
+    load_workspace: Callable[[Path], WorkspaceJSON],
+    merge_workspaces: Callable[[WorkspaceJSON, WorkspaceJSON], WorkspaceJSON],
 ) -> None:
     g_dir = Path("generated_workspaces")
     w_dir = Path("workspaces")
@@ -96,22 +96,21 @@ def merge_project(
     print(f"Second file: {file2}")
     ws2 = load_workspace(file2)
 
-    merged = merge_workspaces(ws1, ws2)
+    merged:WorkspaceJSON = merge_workspaces(ws1, ws2)
 
-    with open(f"{g_dir}/merged/{project}.code-workspace", "w", encoding="utf-8") as f:
-        json.dump(merged, f, indent=2, ensure_ascii=False)
+    workspace_path = Path(f"{g_dir}/merged/{project}.code-workspace")
 
-        f.write("\n")  # Ensure final newline
+    write_final_structure(workspace_path, merged)
 
 
-def merge_workspaces(ws1: dict, ws2: dict) -> dict:
+def merge_workspaces(ws1: WorkspaceJSON, ws2: WorkspaceJSON) -> WorkspaceJSON:
     if conflicts := deep_conflict_detection(ws1, ws2):
         print("❌ Conflicts detected:")
         for conflict in conflicts:
             print(f" - {conflict}")
         sys.exit(1)
 
-    merged: dict[str, Any] = {}
+    merged: WorkspaceJSON = {}
 
     # Extract folder lists from both workspaces, defaulting to empty lists
 
@@ -140,7 +139,7 @@ def merge_workspaces(ws1: dict, ws2: dict) -> dict:
     rec2 = ws2.get("extensions", {}).get("recommendations", [])
     merged["extensions"] = {"recommendations": sorted(set(rec1 + rec2))}
 
-    return cast(dict[Any, Any], _deep_sort(merged))
+    return merged
 
 
 projects = get_projects()
