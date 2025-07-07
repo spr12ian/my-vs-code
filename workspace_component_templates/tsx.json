@@ -1,10 +1,10 @@
 {
   "settings": {
-    "[typescript]": {
+    "[typescriptreact]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.associations": {
-      "*.ts": "typescript"
+      "*.tsx": "typescriptreact"
     },
     "files.exclude": {
       "**/node_modules": true

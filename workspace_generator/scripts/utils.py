@@ -53,7 +53,7 @@ def _get_final_structure(json_data: WorkspaceJSON) -> WorkspaceJSON:
     return final_json_data
 
 
-def get_github_parent_path() -> Path:
+def _get_github_parent_path() -> Path:
     github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
     if github_parent_dir is None:
         raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
@@ -73,7 +73,7 @@ def get_github_parent_path() -> Path:
 
 
 def get_projects() -> list[str]:
-    github_parent_path = get_github_parent_path()
+    github_parent_path = _get_github_parent_path()
     return sorted(
         str(project.name)
         for project in github_parent_path.iterdir()

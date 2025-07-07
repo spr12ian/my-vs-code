@@ -1,10 +1,16 @@
 {
   "folders": [
     {
-      "path": "../../our_finances_typescript"
+      "path": "../../spr12ian.github.io"
     }
   ],
   "settings": {
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -21,8 +27,17 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.tabSize": 4
+    },
+    "[toml]": {
+      "editor.defaultFormatter": "tamasfe.even-better-toml",
+      "editor.wordWrap": "on"
+    },
+    "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml",
+      "editor.wordWrap": "on"
     },
     "cSpell.language": "en-GB",
     "editor.detectIndentation": false,
@@ -31,16 +46,26 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "off",
     "files.associations": {
-      "*.ts": "typescript"
+      "*.toml": "toml",
+      "*.yaml": "yaml",
+      "*.yml": "yaml"
     },
     "files.encoding": "utf8",
     "files.eol": "\n",
     "files.exclude": {
+      "**/*.pyc": true,
       "**/.git": true,
       "**/.gitmodules": true,
+      "**/.hatch": true,
+      "**/.mypy_cache": true,
+      "**/.pytest_cache": true,
+      "**/.ruff_cache": true,
+      "**/.venv": true,
+      "**/__pycache__": true,
       "**/build": true,
       "**/dist": true,
-      "**/node_modules": true
+      "**/node_modules": true,
+      "**/venv": true
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
@@ -58,6 +83,8 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": true,
     "gitlens.views.repositories.files.layout": "tree",
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 88,
     "makefile.configurations": [
       {
         "makeArgs": [],
@@ -74,26 +101,51 @@
     "makefile.loggingLevel": "Normal",
     "makefile.makePath": "/usr/bin/make",
     "makefile.makefilePath": "${workspaceFolder}/Makefile",
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.suggest.completeFunctionCalls": true,
-    "typescript.preferences.quoteStyle": "single"
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.formatting.provider": "none",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyArgs": [
+      "--ignore-missing-imports",
+      "--strict"
+    ],
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.ruffArgs": [
+      "--config=pyproject.toml"
+    ],
+    "python.linting.ruffEnabled": true,
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
   "extensions": {
     "recommendations": [
-      "christian-kohler.path-intellisense",
+      "charliermarsh.ruff",
       "davidanson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "eamodio.gitlens",
+      "ecmel.vscode-html-css",
       "esbenp.prettier-vscode",
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
       "jsoncrack.vscode-jsoncrack",
+      "martinring.yaml-path",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
       "ms-vscode-remote.remote-wsl",
       "ms-vscode.makefile-tools",
       "oouo-diogo-perdigao.docthis",
-      "pmneo.tsimporter",
+      "redhat.vscode-yaml",
       "streetsidesoftware.code-spell-checker",
+      "stylelint.vscode-stylelint",
+      "tamasfe.even-better-toml",
       "usernamehw.errorlens",
       "vscode.json-language-features",
+      "w3cschool.htmlhint",
       "xabikos.javascriptsnippets",
       "yzhang.markdown-all-in-one"
     ]

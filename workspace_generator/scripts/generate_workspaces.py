@@ -10,6 +10,7 @@ IGNORE_LIST = [
     ".hg",
     ".mypy_cache",
     ".svn",
+    ".venv",
     "__pycache__",
     "node_modules",
     "venv",

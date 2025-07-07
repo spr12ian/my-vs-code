@@ -75,7 +75,11 @@ def deep_conflict_detection(a: Any, b: Any, path: str = "") -> list[str]:
     return conflicts
 
 
-def load_workspace(path: Path) -> WorkspaceJSON:
+def load_workspace_json(path: Path) -> WorkspaceJSON:
+    if not path.exists():
+        print(f"No such file: {path}")
+        sys.exit(1)
+        
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
@@ -146,4 +150,4 @@ projects = get_projects()
 
 for project in projects:
     print(f"Processing project: {project}")
-    merge_project(project, load_workspace, merge_workspaces)
+    merge_project(project, load_workspace_json, merge_workspaces)
