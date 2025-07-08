@@ -14,7 +14,16 @@
     },
     "cSpell.language": "en-GB",
     "cSpell.words": [
-      "customisation"
+      "color",
+      "conflictstyle",
+      "customisation",
+      "filemode",
+      "ignorecase",
+      "mypy",
+      "oneline",
+      "pycache",
+      "pytest",
+      "venv"
     ],
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,
@@ -34,9 +43,7 @@
     "files.trimTrailingWhitespace": true,
     "git.detectSubmodules": false,
     "gitlens.blame.highlight.enabled": true,
-    "gitlens.blame.highlight.locations": [
-      "gutter"
-    ],
+    "gitlens.blame.highlight.locations": ["gutter"],
     "gitlens.codeLens.authors.enabled": true,
     "gitlens.codeLens.enabled": true,
     "gitlens.codeLens.recentChange.enabled": true,
@@ -46,9 +53,7 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": true,
     "gitlens.views.repositories.files.layout": "tree",
-    "shellcheck.customArgs": [
-      "--severity=style"
-    ],
+    "shellcheck.customArgs": ["--severity=style"],
     "shellcheck.enable": true,
     "terminal.integrated.defaultProfile.linux": "bash"
   },
