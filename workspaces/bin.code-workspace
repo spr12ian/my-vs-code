@@ -15,10 +15,12 @@
     "cSpell.language": "en-GB",
     "cSpell.words": [
       "chromeos",
+      "dedup",
       "dpkg",
       "githubcli",
       "graphviz",
       "moreutils",
+      "mypy",
       "nullglob",
       "pipx",
       "poppler",
