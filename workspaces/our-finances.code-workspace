@@ -54,6 +54,9 @@
     },
     "cSpell.language": "en-GB",
     "cSpell.words": [
+      "Analyzed",
+      "analyzer",
+      "Analyzes",
       "getcontext",
       "gspread",
       "HMRC",
@@ -68,7 +71,10 @@
       "pytest",
       "pyyaml",
       "sqlalchemy",
+      "sqlitebrowser",
       "sqlparse",
+      "Tokenlist",
+      "VARS",
       "venv"
     ],
     "editor.detectIndentation": false,
