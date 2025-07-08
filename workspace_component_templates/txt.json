@@ -1,0 +1,26 @@
+{
+  "settings": {
+    "files.associations": {
+      "*.txt": "plaintext"
+    },
+    "[plaintext]": {
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.folding": false,
+      "editor.fontFamily": "monospace",
+      "editor.fontSize": 13,
+      "editor.guides.indentation": false,
+      "editor.lineNumbers": "off",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": false,
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "boundary",
+      "editor.wordWrap": "on"
+    },
+    "search.useIgnoreFiles": false,
+    "search.useGlobalIgnoreFiles": false,
+    "search.quickOpen.includeSymbols": false
+  },
+  "extensions": {
+    "recommendations": ["aaron-bond.better-comments", "qcz.text-power-tools"]
+  }
+}

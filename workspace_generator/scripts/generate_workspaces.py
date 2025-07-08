@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 from typing import Any, cast
 
-from utils import get_projects, write_final_structure, WorkspaceJSON
+from utils import get_projects, is_log_file, write_final_structure, WorkspaceJSON
 
 IGNORE_LIST = [
     ".git",
@@ -35,6 +35,10 @@ class Tree:
     def register(self, path: Path) -> None:
         if not path.is_dir():
             suffix = path.suffix.lower() if path.suffix else "._default"
+            if suffix == '.log':
+                if not is_log_file(path):
+                    print(f"Not a real log file: {path}")
+                    return
             self.components.add(suffix)
 
     def walk(self, directory: Path) -> None:

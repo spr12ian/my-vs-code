@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 from typing import Any, TypedDict
 
@@ -79,6 +80,20 @@ def get_projects() -> list[str]:
         for project in github_parent_path.iterdir()
         if project.is_dir()
     )
+
+
+def is_log_file(path: Path) -> bool:
+    log_keywords = ["INFO", "DEBUG", "ERROR", "WARNING", "CRITICAL"]
+    timestamp_pattern = re.compile(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}")
+
+    with open(path, encoding="utf-8", errors="ignore") as f:
+        for _ in range(10):  # check first 10 lines
+            line = f.readline()
+            if any(
+                level in line for level in log_keywords
+            ) and timestamp_pattern.search(line):
+                return True
+    return False
 
 
 def write_final_structure(path: Path, json_data: WorkspaceJSON) -> None:
