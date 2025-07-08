@@ -59,6 +59,7 @@
       "mypy",
       "nics",
       "nino",
+      "pipx",
       "pycache",
       "pytest",
       "venv"
