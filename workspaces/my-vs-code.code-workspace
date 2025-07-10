@@ -26,7 +26,11 @@
       "editor.guides.indentation": false,
       "editor.lineNumbers": "off",
       "editor.minimap.enabled": false,
-      "editor.quickSuggestions": false,
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      },
       "editor.renderControlCharacters": true,
       "editor.renderWhitespace": "boundary",
       "editor.wordWrap": "on"
