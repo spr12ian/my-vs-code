@@ -12,18 +12,6 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
-    "[log]": {
-      "editor.cursorSmoothCaretAnimation": "on",
-      "editor.folding": false,
-      "editor.fontFamily": "monospace",
-      "editor.fontSize": 13,
-      "editor.guides.indentation": false,
-      "editor.lineNumbers": "off",
-      "editor.minimap.enabled": false,
-      "editor.renderControlCharacters": true,
-      "editor.renderWhitespace": "boundary",
-      "editor.wordWrap": "on"
-    },
     "[makefile]": {
       "editor.insertSpaces": false,
       "editor.renderWhitespace": "all",
@@ -31,6 +19,19 @@
     },
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.wordWrap": "on"
+    },
+    "[plaintext]": {
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.folding": false,
+      "editor.fontFamily": "monospace",
+      "editor.fontSize": 13,
+      "editor.guides.indentation": false,
+      "editor.lineNumbers": "off",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": false,
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "boundary",
       "editor.wordWrap": "on"
     },
     "[python]": {
@@ -46,10 +47,6 @@
     },
     "[toml]": {
       "editor.defaultFormatter": "tamasfe.even-better-toml",
-      "editor.wordWrap": "on"
-    },
-    "[yaml]": {
-      "editor.defaultFormatter": "redhat.vscode-yaml",
       "editor.wordWrap": "on"
     },
     "cSpell.language": "en-GB",
@@ -94,12 +91,10 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "off",
     "files.associations": {
-      "*.log": "log",
       "*.sh": "shellscript",
       "*.sql": "sql",
       "*.toml": "toml",
-      "*.yaml": "yaml",
-      "*.yml": "yaml"
+      "*.txt": "plaintext"
     },
     "files.encoding": "utf8",
     "files.eol": "\n",
@@ -176,12 +171,10 @@
       "davidanson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
       "eamodio.gitlens",
-      "emilast.LogFileHighlighter",
       "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "jsoncrack.vscode-jsoncrack",
       "mads-hartmann.bash-ide-vscode",
-      "martinring.yaml-path",
       "ms-python.python",
       "ms-python.vscode-pylance",
       "ms-vscode-remote.remote-wsl",
@@ -189,7 +182,7 @@
       "mtxr.sqltools",
       "mtxr.sqltools-driver-sqlite",
       "oouo-diogo-perdigao.docthis",
-      "redhat.vscode-yaml",
+      "qcz.text-power-tools",
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "timonwong.shellcheck",

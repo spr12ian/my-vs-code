@@ -9,18 +9,6 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
-    "[log]": {
-      "editor.cursorSmoothCaretAnimation": "on",
-      "editor.folding": false,
-      "editor.fontFamily": "monospace",
-      "editor.fontSize": 13,
-      "editor.guides.indentation": false,
-      "editor.lineNumbers": "off",
-      "editor.minimap.enabled": false,
-      "editor.renderControlCharacters": true,
-      "editor.renderWhitespace": "boundary",
-      "editor.wordWrap": "on"
-    },
     "[makefile]": {
       "editor.insertSpaces": false,
       "editor.renderWhitespace": "all",
@@ -28,6 +16,19 @@
     },
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.wordWrap": "on"
+    },
+    "[plaintext]": {
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.folding": false,
+      "editor.fontFamily": "monospace",
+      "editor.fontSize": 13,
+      "editor.guides.indentation": false,
+      "editor.lineNumbers": "off",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": false,
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "boundary",
       "editor.wordWrap": "on"
     },
     "[python]": {
@@ -101,9 +102,9 @@
     "editor.tabSize": 2,
     "editor.wordWrap": "off",
     "files.associations": {
-      "*.log": "log",
       "*.sh": "shellscript",
-      "*.toml": "toml"
+      "*.toml": "toml",
+      "*.txt": "plaintext"
     },
     "files.encoding": "utf8",
     "files.eol": "\n",
@@ -185,7 +186,6 @@
       "charliermarsh.ruff",
       "davidanson.vscode-markdownlint",
       "eamodio.gitlens",
-      "emilast.LogFileHighlighter",
       "esbenp.prettier-vscode",
       "foxundermoon.shell-format",
       "jsoncrack.vscode-jsoncrack",
@@ -194,6 +194,7 @@
       "ms-python.vscode-pylance",
       "ms-vscode-remote.remote-wsl",
       "ms-vscode.makefile-tools",
+      "qcz.text-power-tools",
       "streetsidesoftware.code-spell-checker",
       "tamasfe.even-better-toml",
       "timonwong.shellcheck",
