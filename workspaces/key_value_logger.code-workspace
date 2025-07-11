@@ -19,6 +19,13 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
+    "[plaintext]": {
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "other": "off",
+        "strings": "off"
+      }
+    },
     "cSpell.language": "en-GB",
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,

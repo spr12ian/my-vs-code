@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := update
 
 # bash is required for some of the syntax used in the Makefile
 SHELL := /bin/bash
@@ -24,7 +24,6 @@ LOCAL_SETTINGS_FILE := Code/User/settings.json
 PYTHON_DIR=workspace_generator
 
 .PHONY: \
-	a_z_settings \
 	compare \
 	debug \
 	deploy \
@@ -38,13 +37,9 @@ PYTHON_DIR=workspace_generator
 	list_extensions_remote_installed_json \
 	load_extensions \
 	settings_file_exists \
+	sort \
 	toml_to_json \
 	tree
-
-a_z_settings: ## Put settings.json in alphabetical order
-	@echo "Put settings in alphabetical order..." && \
-	jq empty "$(LOCAL_SETTINGS_FILE)" && \
-	jq -S . "$(LOCAL_SETTINGS_FILE)" | sponge "$(LOCAL_SETTINGS_FILE)"
 
 
 compare: ## Compare settings files
@@ -131,7 +126,18 @@ merge_workspaces: ## Merge workspaces
 	python3 $(PYTHON_DIR)/scripts/merge_workspaces.py && \
 	echo "Workspaces merged."
 
+sort: ## Put settings.json in alphabetical order
+	@echo "Put settings in alphabetical order..." && \
+	jq empty "$(LOCAL_SETTINGS_FILE)" && \
+	jq -S . "$(LOCAL_SETTINGS_FILE)" | sponge "$(LOCAL_SETTINGS_FILE)"
+
 toml_to_json: ## Convert TOML file to JSON
 	@echo "Converting $(FILE) to JSON..." && \
 	python3 $(PYTHON_DIR)/scripts/toml_to_json.py $(FILE) && \
 	echo "Conversion complete."
+
+update: ## Update workspaces
+	@echo "Updating workspaces..." && \
+	python3 $(PYTHON_DIR)/scripts/generate_workspaces.py && \
+	python3 $(PYTHON_DIR)/scripts/merge_workspaces.py && \
+	echo "Workspaces updated."

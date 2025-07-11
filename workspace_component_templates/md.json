@@ -10,6 +10,13 @@
     "[markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
+    },
+    "[plaintext]": {
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      }
     }
   }
 }

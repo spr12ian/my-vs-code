@@ -182,7 +182,8 @@
       "--severity=style"
     ],
     "shellcheck.enable": true,
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "textPowerTools.caseSensitiveFiltering": true
   },
   "extensions": {
     "recommendations": [

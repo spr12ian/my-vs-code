@@ -11,14 +11,19 @@
       "editor.guides.indentation": false,
       "editor.lineNumbers": "off",
       "editor.minimap.enabled": false,
-      "editor.quickSuggestions": false,
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "off"
+      },
       "editor.renderControlCharacters": true,
       "editor.renderWhitespace": "boundary",
       "editor.wordWrap": "on"
     },
     "search.useIgnoreFiles": false,
     "search.useGlobalIgnoreFiles": false,
-    "search.quickOpen.includeSymbols": false
+    "search.quickOpen.includeSymbols": false,
+    "textPowerTools.caseSensitiveFiltering": true
   },
   "extensions": {
     "recommendations": ["aaron-bond.better-comments", "qcz.text-power-tools"]
