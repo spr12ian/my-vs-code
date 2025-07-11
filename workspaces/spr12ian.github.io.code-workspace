@@ -27,6 +27,23 @@
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.wordWrap": "on"
     },
+    "[plaintext]": {
+      "editor.cursorSmoothCaretAnimation": "on",
+      "editor.folding": false,
+      "editor.fontFamily": "monospace",
+      "editor.fontSize": 13,
+      "editor.guides.indentation": false,
+      "editor.lineNumbers": "off",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": {
+        "comments": "off",
+        "other": "off",
+        "strings": "off"
+      },
+      "editor.renderControlCharacters": true,
+      "editor.renderWhitespace": "boundary",
+      "editor.wordWrap": "on"
+    },
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.tabSize": 4
@@ -47,6 +64,7 @@
     "editor.wordWrap": "off",
     "files.associations": {
       "*.toml": "toml",
+      "*.txt": "plaintext",
       "*.yaml": "yaml",
       "*.yml": "yaml"
     },
@@ -120,10 +138,15 @@
     "python.linting.ruffEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "search.quickOpen.includeSymbols": false,
+    "search.useGlobalIgnoreFiles": false,
+    "search.useIgnoreFiles": false,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "textPowerTools.caseSensitiveFiltering": true
   },
   "extensions": {
     "recommendations": [
+      "aaron-bond.better-comments",
       "charliermarsh.ruff",
       "davidanson.vscode-markdownlint",
       "dbaeumer.vscode-eslint",
@@ -139,6 +162,7 @@
       "ms-vscode-remote.remote-wsl",
       "ms-vscode.makefile-tools",
       "oouo-diogo-perdigao.docthis",
+      "qcz.text-power-tools",
       "redhat.vscode-yaml",
       "streetsidesoftware.code-spell-checker",
       "stylelint.vscode-stylelint",
