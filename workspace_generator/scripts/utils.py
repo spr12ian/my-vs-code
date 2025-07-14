@@ -55,9 +55,9 @@ def _get_final_structure(json_data: WorkspaceJSON) -> WorkspaceJSON:
 
 
 def _get_github_parent_path() -> Path:
-    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
+    github_parent_dir = os.getenv("GITHUB_PROJECTS_DIR")
     if github_parent_dir is None:
-        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
+        raise EnvironmentError("GITHUB_PROJECTS_DIR environment variable is not set.")
 
     github_parent_path = Path(github_parent_dir)
 

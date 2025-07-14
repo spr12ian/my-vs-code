@@ -175,9 +175,9 @@ def generate_workspace(workspace_name: str, base_path: Path) -> None:
 
 
 def get_workspace_components(workspace_name: str) -> set[str]:
-    github_parent_dir = os.getenv("GITHUB_PARENT_DIR")
+    github_parent_dir = os.getenv("GITHUB_PROJECTS_DIR")
     if github_parent_dir is None:
-        raise EnvironmentError("GITHUB_PARENT_DIR environment variable is not set.")
+        raise EnvironmentError("GITHUB_PROJECTS_DIR environment variable is not set.")
 
     projects_dir = Path(github_parent_dir)
     if not projects_dir.exists():
