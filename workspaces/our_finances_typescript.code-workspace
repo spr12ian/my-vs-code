@@ -86,6 +86,7 @@
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.preferences.quoteStyle": "single",
     "cSpell.words": [
+      "appsscript",
       "CPTY"
     ]
   },
