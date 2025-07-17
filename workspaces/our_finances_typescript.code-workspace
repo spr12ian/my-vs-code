@@ -86,7 +86,10 @@
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.preferences.quoteStyle": "single",
     "cSpell.words": [
-      "CPTY"
+      "appsscript",
+      "CPTY",
+      "esbuild",
+      "tsup"
     ]
   },
   "extensions": {
