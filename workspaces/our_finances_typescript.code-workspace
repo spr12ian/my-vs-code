@@ -89,6 +89,7 @@
       "appsscript",
       "CPTY",
       "esbuild",
+      "sqrrrl's",
       "tsup"
     ]
   },
