@@ -28,6 +28,7 @@
       "ignorecase",
       "mypy",
       "oneline",
+      "pipx",
       "pycache",
       "pytest",
       "venv"
