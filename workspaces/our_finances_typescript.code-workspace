@@ -89,6 +89,7 @@
       "appsscript",
       "CPTY",
       "esbuild",
+      "proc",
       "Rollup",
       "sqrrrl's",
       "tsup"
