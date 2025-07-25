@@ -27,6 +27,7 @@
       "dpkg",
       "githubcli",
       "graphviz",
+      "keygen",
       "moreutils",
       "mypy",
       "nullglob",
