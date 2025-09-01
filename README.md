@@ -81,3 +81,5 @@ Sign in with GitHub (recommended for your developer workflow and since this file
 Choose what to sync (ensure "Extensions" and "Settings" are selected).
 
 Repeat on all systems — it’ll auto-sync once signed in.
+
+ln -sf "$(hatch env find)" ~/.hatch_envs/"${PWD##*/}"
