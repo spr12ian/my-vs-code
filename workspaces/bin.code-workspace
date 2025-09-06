@@ -25,14 +25,17 @@
       "cleanup",
       "dedup",
       "dpkg",
+      "gdrive",
       "githubcli",
       "graphviz",
       "keygen",
+      "listremotes",
       "moreutils",
       "mypy",
       "nullglob",
       "pipx",
       "poppler",
+      "rclone",
       "shellcheck",
       "tesseract",
       "vcode",
@@ -57,9 +60,7 @@
     "files.trimTrailingWhitespace": true,
     "git.detectSubmodules": false,
     "gitlens.blame.highlight.enabled": true,
-    "gitlens.blame.highlight.locations": [
-      "gutter"
-    ],
+    "gitlens.blame.highlight.locations": ["gutter"],
     "gitlens.codeLens.authors.enabled": true,
     "gitlens.codeLens.enabled": true,
     "gitlens.codeLens.recentChange.enabled": true,
@@ -69,9 +70,7 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": true,
     "gitlens.views.repositories.files.layout": "tree",
-    "shellcheck.customArgs": [
-      "--severity=style"
-    ],
+    "shellcheck.customArgs": ["--severity=style"],
     "shellcheck.enable": true,
     "terminal.integrated.defaultProfile.linux": "bash"
   },
