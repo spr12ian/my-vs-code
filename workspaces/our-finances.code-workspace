@@ -91,6 +91,7 @@
       "sqlalchemy",
       "sqlitebrowser",
       "sqlparse",
+      "ssacrd",
       "Tokenlist",
       "VARS",
       "venv"

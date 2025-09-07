@@ -92,7 +92,10 @@
     "search.useGlobalIgnoreFiles": false,
     "search.useIgnoreFiles": false,
     "terminal.integrated.defaultProfile.linux": "bash",
-    "textPowerTools.caseSensitiveFiltering": true
+    "textPowerTools.caseSensitiveFiltering": true,
+    "cSpell.words": [
+      "pydrive"
+    ]
   },
   "extensions": {
     "recommendations": [
