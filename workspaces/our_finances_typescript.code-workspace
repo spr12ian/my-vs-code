@@ -106,6 +106,7 @@
       "ONEDIT",
       "passthroughs",
       "proc",
+      "Queueable",
       "recomputation",
       "Reentrancy",
       "retryable",
@@ -117,6 +118,7 @@
       "STACKDRIVER",
       "SVIGBL",
       "SVIIRF",
+      "Trimmable",
       "tsup",
       "Xfers",
       "XLOOKUP"
