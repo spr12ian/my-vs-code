@@ -44,7 +44,19 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.hovers.enabled": true,
     "gitlens.views.repositories.files.layout": "tree",
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "cSpell.words": [
+      "Choco",
+      "dbeaver",
+      "Geekbench",
+      "LASTEXITCODE",
+      "malwarebytes",
+      "msstore",
+      "notepadplusplus",
+      "powertoys",
+      "windirstat",
+      "Winget"
+    ]
   },
   "extensions": {
     "recommendations": [
