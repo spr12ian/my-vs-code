@@ -46,6 +46,7 @@
     "gitlens.views.repositories.files.layout": "tree",
     "terminal.integrated.defaultProfile.linux": "bash",
     "cSpell.words": [
+      "autoremove",
       "Choco",
       "dbeaver",
       "Geekbench",
