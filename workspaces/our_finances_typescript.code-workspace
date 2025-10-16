@@ -110,6 +110,7 @@
       "Modeless",
       "mypy",
       "ONEDIT",
+      "parseable",
       "passthroughs",
       "pipefail",
       "proc",
