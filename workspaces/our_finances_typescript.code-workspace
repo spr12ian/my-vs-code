@@ -119,6 +119,7 @@
       "pytest",
       "Queueable",
       "quot",
+      "Recalc",
       "recomputation",
       "Reentrancy",
       "retryable",
